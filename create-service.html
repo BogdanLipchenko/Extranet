@@ -1,0 +1,1973 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Extranet — Создание услуги</title>
+  <link rel="stylesheet" href="/Base2.0/tokens/tokens.css">
+  <link rel="stylesheet" href="/Base2.0/styles/fonts.css">
+  <link rel="stylesheet" href="/Extranet/styles.css">
+</head>
+<body>
+  <div class="extranet-layout">
+
+    <!-- ─── Header ─────────────────────────────────────────────── -->
+    <header class="ex-header">
+      <div class="ex-header__left">
+        <a href="/Extranet/index.html" class="ex-logo">
+          <svg width="146" height="23" viewBox="0 0 146 23" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_8_2574)"><path d="M44.6189 10.7908C44.6189 4.8302 39.7867 0.000137329 33.8287 0.000137329C27.8707 0.000137329 23.0381 4.83273 23.0381 10.7908C23.0381 16.7488 27.8682 21.5814 33.8287 21.5814C39.7893 21.5814 44.6193 16.7488 44.6193 10.7908H44.6189Z" fill="black"/><path d="M39.9152 14.7222C39.5906 14.6383 39.2142 15.4771 39.1063 15.7936C39.0089 16.0857 38.8167 16.9191 39.1063 17.0244C39.4578 17.1513 39.9502 16.232 40.0564 15.8746C40.1373 15.5959 40.1967 14.7951 39.916 14.7247" fill="white"/><path d="M40.7243 2.49126C38.7314 1.55003 36.371 1.02567 34.1285 1.49903C32.9854 1.74055 33.1203 2.30285 32.7709 2.83563C32.2861 3.57412 30.845 3.87802 30.7405 4.21818C30.5917 4.70755 31.3019 5.54678 31.7078 5.6981C32.3544 5.93625 32.9192 4.88332 33.7231 4.7535C34.521 4.62367 37.4897 4.89512 37.9845 5.68166C38.7209 6.50149 38.6366 7.82714 38.1957 8.01134C37.7223 8.20902 36.6294 7.11268 35.8795 7.19698C35.4576 7.24546 34.6348 7.78709 34.1479 7.73019C33.7285 7.68172 33.4554 6.78559 33.0899 6.52383C32.757 6.28568 30.8741 6.69665 30.3893 6.91626C29.7992 7.18139 28.4605 9.07817 28.4247 9.75975C28.3813 10.5522 29.9965 12.1518 30.6486 12.2787C31.3331 12.411 32.5449 11.7864 32.9732 12.081C33.4845 12.4355 34.0447 18.442 35.1621 18.4504C35.8711 18.4559 37.8079 15.8101 38.111 15.2954C38.5358 14.5704 38.2758 13.4151 38.425 13.0176C38.6113 12.5198 39.7886 11.8652 39.8345 11.337C39.8779 10.8637 38.2926 9.50263 38.6846 9.22107C38.9957 8.99893 40.6682 9.80022 41.2116 9.4647C41.6757 9.17849 41.6929 7.73609 42.2889 6.6545C42.4019 6.44923 42.6173 6.31898 42.8521 6.31898C43.2538 6.31898 43.6854 6.51077 44.1465 7.62355C43.524 5.5923 42.318 3.81606 40.7247 2.49042L40.7243 2.49126Z" fill="white"/><path d="M25.7819 14.0157C25.4573 13.0344 23.5888 13.4707 23.1074 12.0076C23.357 14.2294 24.2801 16.2476 25.6694 17.8514C24.8934 16.1759 26.1469 15.1213 25.7819 14.0157Z" fill="white"/></g><path d="M21.5812 10.7906C21.5812 16.7501 16.7501 21.5812 10.7906 21.5812C4.83113 21.5812 0 16.7501 0 10.7906C0 4.83113 4.83113 0 10.7906 0C16.7501 0 21.5812 4.83113 21.5812 10.7906Z" fill="black"/><path d="M12.1462 6.27026H11.1824C9.41557 6.27026 8.48625 7.16516 8.48625 8.48457C8.48625 9.97607 9.12875 10.6759 10.4482 11.5708L11.5381 12.3051L8.40594 16.9861H6.06543L8.87634 12.7985C7.25863 11.6397 6.35226 10.5153 6.35226 8.61077C6.35226 6.22437 8.01586 4.59519 11.171 4.59519H14.3031V16.9747H12.1462V6.27026Z" fill="white"/><path d="M53.4958 19.1174C52.6541 19.1174 51.9294 19.0005 51.3215 18.7667C50.7136 18.5174 50.2149 18.2602 49.8252 17.9952V15.7274C50.3084 16.0703 50.8305 16.3586 51.3916 16.5924C51.9683 16.8106 52.6386 16.9198 53.4023 16.9198C54.5713 16.9198 55.4597 16.4911 56.0676 15.6339C56.691 14.761 57.0573 13.4907 57.1664 11.823H52.0229V9.62529H57.1664C57.0573 7.92637 56.7066 6.66387 56.1143 5.83778C55.5376 5.0117 54.6882 4.59866 53.5659 4.59866C52.8646 4.59866 52.2177 4.71556 51.6254 4.94936C51.0331 5.18315 50.5188 5.43254 50.0824 5.69751V3.42968C50.4564 3.16471 50.9552 2.93091 51.5787 2.72829C52.2021 2.51008 52.9269 2.40097 53.753 2.40097C55.826 2.40097 57.3924 3.14133 58.4523 4.62204C59.5278 6.10275 60.0655 8.15237 60.0655 10.7709C60.0655 13.3738 59.4888 15.4157 58.3354 16.8964C57.1976 18.3771 55.5844 19.1174 53.4958 19.1174Z" fill="black"/><path d="M68.834 18.8836L64.7191 13.2024V18.8836H61.937V7.12367H64.7191V12.6413L68.6469 7.12367H71.4525L67.5247 12.6413L71.9902 18.8836H68.834Z" fill="black"/><path d="M77.3982 19.1174C75.5435 19.1174 74.1563 18.5875 73.2367 17.5276C72.3326 16.4677 71.8806 14.9637 71.8806 13.0153C71.8806 12.1269 71.9975 11.3086 72.2313 10.5605C72.4651 9.79674 72.8002 9.14991 73.2367 8.61997C73.6887 8.07444 74.2498 7.65361 74.92 7.35746C75.6058 7.04573 76.3929 6.88987 77.2813 6.88987C77.9671 6.88987 78.5594 6.94442 79.0582 7.05353C79.5725 7.16263 79.9778 7.29512 80.2739 7.45098V9.81233C79.9934 9.64088 79.6037 9.47722 79.105 9.32136C78.6218 9.16549 78.1152 9.08756 77.5853 9.08756C76.6813 9.08756 75.9799 9.41487 75.4811 10.0695C74.9979 10.7241 74.7563 11.6827 74.7563 12.9452C74.7563 14.1609 74.9745 15.1273 75.411 15.8443C75.863 16.5613 76.58 16.9198 77.5619 16.9198C78.1386 16.9198 78.6452 16.8496 79.0816 16.7093C79.5336 16.5691 79.931 16.3742 80.2739 16.1248V18.3927C79.931 18.6421 79.5258 18.8213 79.0582 18.9304C78.5906 19.0551 78.0373 19.1174 77.3982 19.1174Z" fill="black"/><path d="M90.656 9.32136H87.3828V18.8836H84.6006V9.32136H81.3275V7.12367H90.656V9.32136Z" fill="black"/><path d="M94.8749 7.12367L95.0152 8.64335C95.3893 8.06665 95.8413 7.63023 96.3712 7.33408C96.9012 7.03794 97.4934 6.88987 98.1481 6.88987C99.4573 6.88987 100.525 7.41981 101.351 8.47969C102.177 9.53957 102.59 11.0437 102.59 12.992C102.59 14.9559 102.162 16.4677 101.304 17.5276C100.463 18.5875 99.3638 19.1174 98.0078 19.1174C97.4155 19.1174 96.8622 18.985 96.3478 18.72C95.8491 18.4394 95.4282 18.0342 95.0853 17.5042V22.2737H92.3031V7.12367H94.8749ZM97.3064 16.9198C98.1013 16.9198 98.7014 16.608 99.1066 15.9846C99.5119 15.3455 99.7145 14.348 99.7145 12.992C99.7145 11.6359 99.5275 10.6462 99.1534 10.0227C98.7793 9.39929 98.2104 9.08756 97.4467 9.08756C96.6674 9.08756 96.0751 9.40708 95.6698 10.0461C95.2802 10.6696 95.0853 11.6593 95.0853 13.0153C95.0853 14.3714 95.2724 15.3611 95.6464 15.9846C96.0205 16.608 96.5738 16.9198 97.3064 16.9198Z" fill="black"/><path d="M113.126 10.8644V16.0079C113.126 16.4911 113.134 16.9743 113.15 17.4575C113.181 17.9251 113.22 18.4005 113.267 18.8836H110.554C110.508 18.7745 110.461 18.6343 110.414 18.4628C110.383 18.2758 110.36 18.1043 110.344 17.9485H110.227C109.962 18.229 109.619 18.4862 109.198 18.72C108.778 18.9382 108.162 19.0473 107.351 19.0473C106.276 19.0473 105.403 18.7278 104.733 18.0887C104.078 17.4341 103.751 16.5145 103.751 15.3299C103.751 14.1454 104.242 13.218 105.224 12.5478C106.221 11.8775 107.78 11.5424 109.9 11.5424H110.344V10.8878C110.344 10.2643 110.188 9.82012 109.876 9.55515C109.565 9.29018 109.074 9.1577 108.404 9.1577C107.687 9.1577 106.962 9.28239 106.229 9.53177C105.512 9.78116 104.967 10.0461 104.593 10.3267V8.01209C105.013 7.76271 105.575 7.52112 106.276 7.28732C106.993 7.05353 107.811 6.93663 108.731 6.93663C110.196 6.93663 111.295 7.24056 112.027 7.84844C112.76 8.44072 113.126 9.44605 113.126 10.8644ZM110.344 16.0781V13.5297H109.947C108.762 13.5297 107.905 13.67 107.375 13.9505C106.86 14.2155 106.603 14.6831 106.603 15.3533C106.603 15.8521 106.751 16.2573 107.048 16.5691C107.344 16.8652 107.78 17.0133 108.357 17.0133C108.84 17.0133 109.245 16.9198 109.573 16.7327C109.915 16.5457 110.173 16.3275 110.344 16.0781Z" fill="black"/><path d="M121.863 7.12367H124.645V18.8836H121.863V13.9739H118.145V18.8836H115.363V7.12367H118.145V11.7762H121.863V7.12367Z" fill="black"/><path d="M135.986 18.0887C135.58 18.3693 135.051 18.6109 134.396 18.8135C133.741 19.0161 132.97 19.1174 132.081 19.1174C130.32 19.1174 128.948 18.6187 127.966 17.6211C127 16.608 126.517 15.0806 126.517 13.0387C126.517 12.1503 126.618 11.332 126.821 10.5839C127.023 9.82012 127.327 9.17329 127.733 8.64335C128.154 8.09782 128.676 7.66919 129.299 7.35746C129.938 7.04573 130.679 6.88987 131.52 6.88987C132.907 6.88987 134.014 7.3185 134.84 8.17575C135.682 9.03301 136.103 10.4825 136.103 12.5244V13.9973H129.393C129.455 14.9792 129.704 15.7118 130.141 16.195C130.577 16.6782 131.302 16.9198 132.315 16.9198C132.985 16.9198 133.656 16.8106 134.326 16.5924C134.996 16.3742 135.549 16.1171 135.986 15.8209V18.0887ZM131.473 9.08756C130.803 9.08756 130.297 9.32915 129.954 9.81233C129.611 10.2955 129.424 11.0047 129.393 11.9399H133.274V11.7061C133.274 10.9735 133.141 10.3579 132.876 9.85909C132.627 9.34474 132.159 9.08756 131.473 9.08756Z" fill="black"/><path d="M146 9.32136H142.727V18.8836H139.945V9.32136H136.672V7.12367H146V9.32136Z" fill="black"/><defs><clipPath id="clip0_8_2574"><rect width="21.5812" height="21.5812" fill="white" transform="translate(23.0381 0.000118256)"/></clipPath></defs></svg>
+        </a>
+        <div class="ex-hotel-selector">
+          <span class="ex-hotel-selector__name">Отель 3*</span>
+          <div class="ex-hotel-selector__stars">
+            <img src="/Extranet/assets/878c8e678a9e6ac3c66f79e14227854a33bf4ea5.svg" alt="★" width="16" height="16">
+            <img src="/Extranet/assets/878c8e678a9e6ac3c66f79e14227854a33bf4ea5.svg" alt="★" width="16" height="16">
+            <img src="/Extranet/assets/878c8e678a9e6ac3c66f79e14227854a33bf4ea5.svg" alt="★" width="16" height="16">
+          </div>
+          <div class="ex-hotel-selector__divider"></div>
+          <span class="ex-hotel-selector__meta">Гостиница&nbsp; •&nbsp; ID 49531951</span>
+          <span class="ex-hotel-selector__status">Размещается</span>
+          <div class="ex-hotel-selector__divider"></div>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="ex-hotel-selector__arrow"><path d="M8 9.58236L12.7931 4.79249C13.1838 4.4021 13.817 4.40232 14.2073 4.79298C14.5977 5.18363 14.5975 5.8168 14.2069 6.20719L8.70687 11.7034C8.3164 12.0936 7.6836 12.0936 7.29313 11.7034L1.79313 6.20719C1.40248 5.8168 1.40226 5.18363 1.79265 4.79298C2.18304 4.40232 2.81621 4.4021 3.20687 4.79249L8 9.58236Z" fill="#0D0D0D"/></svg>
+        </div>
+      </div>
+      <div class="ex-header__right">
+        <button class="ex-btn-help">
+          Помощь
+          <img src="/Extranet/assets/0f16f7d2ba0b8eec5236bf3397557b2d69c03000.svg" alt="" width="16" height="16">
+        </button>
+        <div class="ex-avatar">
+          <img src="/Extranet/assets/38314a65e2a3d14ef6ff5023304bc46c69811c4c.png" alt="User">
+        </div>
+      </div>
+    </header>
+
+    <!-- ─── Body ──────────────────────────────────────────────── -->
+    <div class="ex-body">
+
+      <!-- ─── Sidebar ─────────────────────────────────── -->
+      <aside class="ex-sidebar">
+        <nav class="ex-sidebar__menu">
+          <ul class="ex-sidebar__list">
+            <a href="/Extranet/index.html" class="ex-snippet" style="text-decoration:none;">
+              <span class="ex-snippet__icon"><img src="/Extranet/assets/3bc786262dec2fc94cab417e7cd8f754dcd001c2.svg" alt="" width="20" height="20"></span>
+              <span class="ex-snippet__label">Главная</span>
+            </a>
+            <li class="ex-snippet">
+              <span class="ex-snippet__icon"><img src="/Extranet/assets/8adeb14e650b099aae78d50547aa18e193871963.svg" alt="" width="20" height="20"></span>
+              <span class="ex-snippet__label">Категории номеров</span>
+            </li>
+            <li class="ex-snippet">
+              <span class="ex-snippet__icon"><img src="/Extranet/assets/b1fe04d7e178c84eb0062a43494cdf97f6b9081f.svg" alt="" width="20" height="20"></span>
+              <span class="ex-snippet__label">Тарифы</span>
+            </li>
+            <li class="ex-snippet">
+              <span class="ex-snippet__icon"><img src="/Extranet/assets/6718807c76904b2168981ed37b9888bfc2d5cfc1.svg" alt="" width="20" height="20"></span>
+              <span class="ex-snippet__label">Доступность и цены</span>
+            </li>
+            <li class="ex-snippet">
+              <span class="ex-snippet__icon"><img src="/Extranet/assets/b1fe04d7e178c84eb0062a43494cdf97f6b9081f.svg" alt="" width="20" height="20"></span>
+              <span class="ex-snippet__label">Аналитика</span>
+            </li>
+            <li class="ex-snippet ex-snippet--has-submenu" id="snippet-object" onclick="toggleSubmenu()">
+              <span class="ex-snippet__icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.42285 17.7715C8.41405 17.7643 8.40518 17.7573 8.39648 17.75C8.40518 17.7573 8.41406 17.7643 8.42285 17.7715ZM13.7705 8.06445C13.5018 7.89823 13.1622 7.89813 12.8936 8.06445L9.56055 10.1279C9.31526 10.2798 9.16613 10.5475 9.16602 10.8359V15.833C9.16628 16.293 9.53895 16.666 9.99902 16.666H16.666C17.1259 16.6658 17.4988 16.2929 17.499 15.833V10.8359C17.4989 10.5476 17.3497 10.2798 17.1045 10.1279L13.7705 8.06445ZM3.83203 3.66699C3.2799 3.66717 2.83203 4.11482 2.83203 4.66699V15.334C2.83238 15.8859 3.28011 16.3338 3.83203 16.334H7.5498C7.51684 16.1721 7.49906 16.0046 7.49902 15.833V10.8359C7.49914 9.97028 7.94754 9.16659 8.68359 8.71094L10.499 7.58691V4.66699C10.499 4.11482 10.0512 3.66717 9.49902 3.66699H3.83203ZM12.499 18.334H3.83203L3.67773 18.3301C2.14404 18.2522 0.913958 17.0219 0.835938 15.4883L0.832031 15.334V4.66699C0.832031 3.01025 2.17533 1.66717 3.83203 1.66699H9.49902L9.65332 1.6709C11.2383 1.75137 12.499 3.062 12.499 4.66699V6.41504C12.4961 6.41607 12.4931 6.41693 12.4902 6.41797C13.1978 6.16488 13.9936 6.24209 14.6484 6.64746L17.9814 8.71094C18.7175 9.1666 19.1659 9.97029 19.166 10.8359V15.833C19.1658 17.2134 18.0464 18.3328 16.666 18.333H12.499V18.334ZM8.23926 17.6084C8.28934 17.6581 8.34236 17.7047 8.39648 17.75C8.34234 17.7047 8.28937 17.6581 8.23926 17.6084Z" fill="#0D0D0F"/><rect x="4.16602" y="5" width="1.66667" height="1.66667" fill="#0D0D0F"/><rect x="4.16602" y="8.33334" width="1.66667" height="1.66667" fill="#0D0D0F"/><rect x="4.16602" y="11.6667" width="1.66667" height="1.66667" fill="#0D0D0F"/><rect x="7.5" y="5" width="1.66667" height="1.66667" fill="#0D0D0F"/><rect x="10.832" y="10.8333" width="1.66667" height="1.66667" fill="#0D0D0F"/><rect x="14.166" y="10.8333" width="1.66667" height="1.66667" fill="#0D0D0F"/><rect x="12.5" y="14.1667" width="1.66667" height="2.5" fill="#0D0D0F"/></svg></span>
+              <span class="ex-snippet__label">Объект</span>
+              <span class="ex-snippet__lamp"><img src="/Extranet/assets/014f2e8cb513fc61d56c389a19389c9f83a7fdf3.svg" alt="" width="16" height="16"></span>
+
+            </li>
+            <li class="ex-snippet">
+              <span class="ex-snippet__icon"><img src="/Extranet/assets/d44fcc869a4752109bb274d0ad32b79adb279e1d.svg" alt="" width="20" height="20"></span>
+              <span class="ex-snippet__label">Продвижение</span>
+            </li>
+          </ul>
+          <div class="ex-sidebar__divider"></div>
+          <ul class="ex-sidebar__list">
+            <a href="/Extranet/bookings.html" class="ex-snippet" style="text-decoration:none;">
+              <span class="ex-snippet__icon"><img src="/Extranet/assets/8c0527ee1c6aa7f0f9e68ebe4af1b64ba7e3fd60.svg" alt="" width="20" height="20"></span>
+              <span class="ex-snippet__label">Бронирования</span>
+            </a>
+            <li class="ex-snippet">
+              <span class="ex-snippet__icon"><img src="/Extranet/assets/b2b597a38cd6603580eace27315e018a40abfd3b.svg" alt="" width="20" height="20"></span>
+              <span class="ex-snippet__label">Платежи</span>
+            </li>
+          </ul>
+        </nav>
+        <button class="ex-snippet ex-snippet--collapse">
+          <span class="ex-snippet__icon"><img src="/Extranet/assets/5fa4c68451031fbb33538a898504e75abbfcc20d.svg" alt="" width="16" height="16"></span>
+          <span class="ex-snippet__label">Свернуть</span>
+        </button>
+      </aside>
+
+      <!-- Submenu (closed by default) -->
+      <div class="ex-submenu" id="submenu-object">
+        <ul class="ex-submenu__list">
+          <li class="ex-submenu__item">Правила проживания</li>
+          <li class="ex-submenu__item">Договор и отчеты</li>
+          <li class="ex-submenu__item">
+            <a href="/Extranet/amenities.html" class="ex-submenu__link">Удобства в номерах</a>
+          </li>
+          <li class="ex-submenu__item ex-submenu__item--with-badge">
+            <a href="/Extranet/paid-services.html" class="ex-submenu__link">Платные услуги</a>
+            <span class="ex-submenu__badge">Новое</span>
+          </li>
+          <li class="ex-submenu__item">История изменений</li>
+          <li class="ex-submenu__item">Менеджер каналов</li>
+          <li class="ex-submenu__item">Адрес объекта</li>
+        </ul>
+      </div>
+
+      <!-- ─── Main content ────────────────────────────── -->
+      <main class="ex-main">
+        <div class="cs-canvas">
+          <div class="cs-layout">
+
+          <!-- ─── Left: Form ──────────────────────── -->
+          <div class="cs-form">
+
+            <!-- Page header -->
+            <div class="cs-page-header">
+              <a href="/Extranet/paid-services.html" class="cs-back-link">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.41764 8L7.20751 12.7931C7.5979 13.1838 7.59768 13.817 7.20702 14.2073C6.81637 14.5977 6.1832 14.5975 5.79281 14.2069L0.296558 8.70687C-0.0936445 8.3164 -0.0936445 7.6836 0.296558 7.29313L5.79281 1.79313C6.1832 1.40248 6.81637 1.40226 7.20702 1.79265C7.59768 2.18304 7.5979 2.81621 7.20751 3.20687L2.41764 8Z" fill="#9C9BA2"/></svg>
+                Вернуться к списку
+              </a>
+              <h1 class="cs-page-title" id="page-title">Создание услуги</h1>
+            </div>
+
+            <!-- ─── Section 1: Тип услуги и описание ── -->
+            <div class="cs-section" style="margin-top: 12px;">
+              <div class="cs-section__heading">
+                <h2 class="cs-section__title">Тип услуги и описание</h2>
+                <p class="cs-section__subtitle">Эти данные будут показаны гостю в карточке услуги</p>
+              </div>
+
+              <div class="cs-fields" style="margin-top: 32px;">
+                <!-- Тип услуги -->
+                <div class="cs-field-col">
+                  <div class="cs-field-label-group">
+                    <span class="cs-field-label">Тип услуги</span>
+                    <span class="cs-field-hint">От типа услуги будут зависеть доступные методы расчёта стоимости услуги.</span>
+                  </div>
+                  <div class="cs-select cs-select--full" id="service-type-select">
+                    <span class="cs-select__placeholder" id="service-type-label">Выберите тип услуги</span>
+                    <img src="/Extranet/assets/chevron-down.svg" alt="" width="24" height="24" class="cs-select__arrow" id="service-type-arrow">
+                  </div>
+                </div>
+
+                <!-- Тип проживания с животными (показывается только при выборе «Проживание с животными») -->
+                <div class="cs-field-col" id="pets-type-field" style="display:none;">
+                  <div class="cs-field-label-group">
+                    <span class="cs-field-label">Размер животного</span>
+                    <span class="cs-field-hint">Укажите тип проживания с животными. Тип будет указан в качестве заголовка услуги</span>
+                  </div>
+                  <div class="cs-select cs-select--full" id="pets-type-select">
+                    <span class="cs-select__placeholder" id="pets-type-label">Выберите тип проживания</span>
+                    <img src="/Extranet/assets/chevron-down.svg" alt="" width="24" height="24" class="cs-select__arrow" id="pets-type-arrow">
+                  </div>
+                </div>
+
+                <!-- Вид парковки (показывается только при выборе «Парковка») -->
+                <div class="cs-field-col" id="parking-type-field" style="display:none;">
+                  <div class="cs-field-label-group">
+                    <span class="cs-field-label">Вид парковки</span>
+                    <span class="cs-field-hint">Укажите тип парковки, доступной для гостей. Тип парковки будет указан в качестве заголовка услуги</span>
+                  </div>
+                  <div class="cs-select cs-select--full" id="parking-type-select">
+                    <span class="cs-select__placeholder" id="parking-type-label">Выберите вид парковки</span>
+                    <img src="/Extranet/assets/chevron-down.svg" alt="" width="24" height="24" class="cs-select__arrow" id="parking-type-arrow">
+                  </div>
+                </div>
+
+                <!-- Тип СПА-комплекса (показывается только при выборе «СПА-комплекс») -->
+                <div class="cs-field-col" id="spa-type-field" style="display:none;">
+                  <div class="cs-field-label-group">
+                    <span class="cs-field-label">Тип СПА-комплекса</span>
+                    <span class="cs-field-hint">Укажите тип СПА-комплекса. Тип будет указан в качестве заголовка услуги</span>
+                  </div>
+                  <div class="cs-select cs-select--full" id="spa-type-select">
+                    <span class="cs-select__placeholder" id="spa-type-label">Выберите тип СПА-комплекса</span>
+                    <img src="/Extranet/assets/chevron-down.svg" alt="" width="24" height="24" class="cs-select__arrow" id="spa-type-arrow">
+                  </div>
+                </div>
+
+                <!-- Тип дополнения в номер (показывается только при выборе «Дополнения в номер») -->
+                <div class="cs-field-col" id="extras-type-field" style="display:none;">
+                  <div class="cs-field-label-group">
+                    <span class="cs-field-label">Тип дополнения</span>
+                    <span class="cs-field-hint">Укажите тип дополнения в номер. Тип будет указан в качестве заголовка услуги</span>
+                  </div>
+                  <div class="cs-select cs-select--full" id="extras-type-select">
+                    <span class="cs-select__placeholder" id="extras-type-label">Выберите тип дополнения</span>
+                    <img src="/Extranet/assets/chevron-down.svg" alt="" width="24" height="24" class="cs-select__arrow" id="extras-type-arrow">
+                  </div>
+                </div>
+
+                <!-- Описание -->
+                <div class="cs-field-col">
+                  <div class="cs-field-label-group">
+                    <span class="cs-field-label">Описание</span>
+                    <span class="cs-field-hint">Поможет гостям быстрее понять подходит им услуга или нет</span>
+                  </div>
+                  <textarea class="cs-textarea" id="description-input" placeholder="Например: закрытый тёплый паркинг"></textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- ─── Section 2: Фотографии ───────────── -->
+            <div class="cs-section">
+              <div class="cs-section__heading">
+                <h2 class="cs-section__title">Фотографии</h2>
+                <p class="cs-section__subtitle">Эти фотографии будет показаны гостю в карточке услуги. Должна быть минимум 1 фотография</p>
+              </div>
+
+              <!-- Segmented control -->
+              <div class="cs-segmented" style="margin-top: 24px;">
+                <button class="cs-segmented__tab cs-segmented__tab--active">Загрузить новые</button>
+                <button class="cs-segmented__tab">Выбрать из добавленных</button>
+              </div>
+
+              <!-- Hidden file input -->
+              <input type="file" id="photo-input" accept="image/jpeg,image/png" multiple style="display:none;">
+
+              <!-- Drag & drop (показывается когда фото нет) -->
+              <div class="cs-dropzone" id="photo-dropzone" style="margin-top: 12px;">
+                <img src="/Extranet/assets/51d2b3c5a1d5a46db1f3df8b62729b470a48e425.svg" alt="" width="32" height="32">
+                <div class="cs-dropzone__text">
+                  <p class="cs-dropzone__title">Перетащите снимки сюда или выберите их</p>
+                  <p class="cs-dropzone__hint">Формат JPEG и PNG. Максимальный размер одного снимка — 5 Мб</p>
+                </div>
+                <button class="cs-btn-secondary" id="photo-select-btn">Выбрать файлы</button>
+              </div>
+
+              <!-- Сетка фото (показывается когда есть фото) -->
+              <div class="cs-photo-grid" id="photo-grid" style="display:none; margin-top: 12px;"></div>
+            </div>
+
+            <!-- ─── Section 3: Ценообразование ──────── -->
+            <div class="cs-section">
+              <div class="cs-section__heading">
+                <h2 class="cs-section__title">Ценообразование</h2>
+                <p class="cs-section__subtitle">Укажите как будет расчитываться стоимость за услугу</p>
+              </div>
+
+              <div class="cs-fields cs-fields--pricing">
+                <!-- Как расчитываем стоимость -->
+                <div class="cs-field-row">
+                  <div class="cs-field-label-group">
+                    <span class="cs-field-label">Как расчитываем стоимость</span>
+                    <span class="cs-field-hint">Выберите правило расчёта стоимости услуги</span>
+                  </div>
+                  <div class="cs-select cs-select--sm" id="pricing-type-select">
+                    <span class="cs-select__placeholder" id="pricing-type-label">Выберите тип расчёта</span>
+                    <img src="/Extranet/assets/chevron-down.svg" alt="" width="24" height="24" class="cs-select__arrow" id="pricing-type-arrow">
+                  </div>
+                </div>
+
+                <!-- Цена за услугу -->
+                <div class="cs-field-row">
+                  <div class="cs-field-label-group">
+                    <span class="cs-field-label">Цена за услугу</span>
+                    <span class="cs-field-hint">Укажите цену</span>
+                  </div>
+                  <div class="cs-input cs-input--sm">
+                    <input type="number" class="cs-input__field" id="price-input" placeholder="0">
+                    <span class="cs-input__prefix" id="price-suffix" style="opacity:0;">₽</span>
+                  </div>
+                </div>
+
+                <!-- Налогообложение -->
+                <div class="cs-field-row">
+                  <div class="cs-field-label-group">
+                    <span class="cs-field-label">Налогообложение</span>
+                  </div>
+                  <div class="cs-select cs-select--sm" id="tax-type-select">
+                    <span class="cs-select__placeholder" id="tax-type-label">Выберите тип налогообложения</span>
+                    <img src="/Extranet/assets/chevron-down.svg" alt="" width="24" height="24" class="cs-select__arrow" id="tax-type-arrow">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ─── Section 4: Ограничения ───────────── -->
+            <div class="cs-section">
+              <div class="cs-section__heading">
+                <h2 class="cs-section__title">Ограничения</h2>
+                <p class="cs-section__subtitle">Параметры при которых услуга не будет показана гостям</p>
+              </div>
+
+              <div class="cs-field-row" style="justify-content: space-between;">
+                <div class="cs-field-label-group">
+                  <span class="cs-field-label">Даты исключения</span>
+                  <span class="cs-field-hint">Укажите даты, для которых не хотите подключать услугу раннего заезда</span>
+                </div>
+                <button class="cs-btn-secondary" id="exceptions-btn">Настроить</button>
+              </div>
+
+              <!-- Chips с датами исключения -->
+              <div class="cs-exceptions-chips" id="exceptions-chips" style="display:none;">
+              </div>
+            </div>
+
+            <!-- ─── Section 5: Доступные категории ──── -->
+            <div class="cs-section">
+              <div class="cs-section__heading">
+                <h2 class="cs-section__title">Доступные категории номера</h2>
+                <p class="cs-section__subtitle">Выберите одну или несколько категорий номеров, на которые будет распространяться парковка</p>
+              </div>
+
+              <div class="cs-select" style="margin-top: 20px;" id="category-select">
+                <span class="cs-select__value" id="category-label">Все категории</span>
+                <img src="/Extranet/assets/chevron-down.svg" alt="" width="24" height="24" class="cs-select__arrow" id="category-arrow">
+              </div>
+
+              <!-- Блоки категорий номеров (показываются при «Только выбранные») -->
+              <div class="cs-room-list" id="room-list" style="display:none;">
+
+                <div class="cs-room-card">
+                  <div class="cs-room-card__title">
+                    <span class="cs-room-card__name">Эконом</span>
+                    <label class="cs-toggle">
+                      <input type="checkbox" data-room="Эконом">
+                      <span class="cs-toggle__track"></span>
+                      <span class="cs-toggle__knob"></span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="cs-room-card">
+                  <div class="cs-room-card__title">
+                    <span class="cs-room-card__name">Стандарт</span>
+                    <label class="cs-toggle">
+                      <input type="checkbox" data-room="Стандарт">
+                      <span class="cs-toggle__track"></span>
+                      <span class="cs-toggle__knob"></span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="cs-room-card">
+                  <div class="cs-room-card__title">
+                    <span class="cs-room-card__name">Люкс</span>
+                    <label class="cs-toggle">
+                      <input type="checkbox" data-room="Люкс">
+                      <span class="cs-toggle__track"></span>
+                      <span class="cs-toggle__knob"></span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="cs-room-card">
+                  <div class="cs-room-card__title">
+                    <span class="cs-room-card__name">Президентский люкс</span>
+                    <label class="cs-toggle">
+                      <input type="checkbox" data-room="Президентский люкс">
+                      <span class="cs-toggle__track"></span>
+                      <span class="cs-toggle__knob"></span>
+                    </label>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+          <!-- ─── Right: Preview card ─────────────── -->
+          <aside class="cs-preview">
+            <div class="cs-preview-card">
+
+              <!-- Информер успеха (скрыт по умолчанию) -->
+              <div class="cs-inform-label" id="success-inform" style="display:none;">
+                <div class="cs-inform-label__icon">
+                  <div class="cs-inform-label__icon-bg">
+                    <img src="/Extranet/assets/2dcaf305b2da6ce769148a12d8477c0876c62274.svg" alt="" width="10" height="8">
+                  </div>
+                </div>
+                <p class="cs-inform-label__text">Услуга добавлена. Гости могут её добавить и забронировать вместе с проживанием.</p>
+              </div>
+
+              <div class="cs-preview-card__fields">
+                <div class="cs-preview-card__row">
+                  <span class="cs-preview-card__label">Название услуги</span>
+                  <span class="cs-preview-card__value cs-preview-card__value--placeholder" id="preview-name">Укажите название</span>
+                </div>
+                <div class="cs-preview-card__row">
+                  <span class="cs-preview-card__label">Расчёт стоимости</span>
+                  <span class="cs-preview-card__value cs-preview-card__value--placeholder" id="preview-pricing">Укажите расчёт</span>
+                </div>
+                <div class="cs-preview-card__row">
+                  <span class="cs-preview-card__label">Цена за услугу</span>
+                  <span class="cs-preview-card__value cs-preview-card__value--placeholder" id="preview-price">Укажите цену</span>
+                </div>
+                <div class="cs-preview-card__row">
+                  <span class="cs-preview-card__label">Размер НДС</span>
+                  <span class="cs-preview-card__value cs-preview-card__value--placeholder" id="preview-tax">Укажите НДС</span>
+                </div>
+              </div>
+              <div class="cs-preview-card__actions" id="actions-group">
+                <button class="ex-btn-primary" id="save-btn" style="display:none;">
+                  Сохранить изменения
+                </button>
+                <button class="ex-btn-primary cs-preview-card__submit" id="submit-btn">
+                  Создать услугу
+                </button>
+              </div>
+            </div>
+          </aside>
+
+        </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- ─── Delete Modal ────────────────────────────────────────── -->
+  <div class="cs-modal-overlay" id="delete-modal" style="display:none;">
+    <div class="cs-delete-modal">
+      <div class="cs-delete-modal__header">
+        <h2 class="cs-delete-modal__title">Уверены, что хотите удалить услугу?</h2>
+        <button class="cs-delete-modal__close" id="delete-modal-close">
+          <img src="/Extranet/assets/21d5c3c406b043f1fd9c1a5b8757889578c00394.svg" alt="" width="16" height="16">
+        </button>
+      </div>
+      <p class="cs-delete-modal__text">Это не повлияет на текущие бронирования с добавленными услугами. В дальнейшем услугу нужно будет создавать и настраивать заново.</p>
+      <div class="cs-delete-modal__actions">
+        <button class="cs-delete-modal__btn-confirm" id="delete-confirm-btn">Да, удалить</button>
+        <button class="cs-delete-modal__btn-cancel" id="delete-cancel-btn">Пока оставить</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── Deleted Modal ───────────────────────────────────────── -->
+  <div class="cs-modal-overlay" id="deleted-modal" style="display:none;">
+    <div class="cs-modal">
+      <img src="/Extranet/assets/ec84644784fe9ed26d64e8bc6de42689683a4da1.png" alt="" width="124" height="124" class="cs-modal__illustration">
+      <div class="cs-modal__content">
+        <h2 class="cs-modal__title">Услуга удалена</h2>
+        <p class="cs-modal__subtitle">Это не повлияет на текущие бронирования с этой заказанной услугой. Остальные гости больше не увидят эту услугу</p>
+      </div>
+      <button class="cs-modal__btn" id="deleted-modal-close-btn">Закрыть</button>
+    </div>
+  </div>
+
+  <!-- ─── Success Modal ───────────────────────────────────────── -->
+  <div class="cs-modal-overlay" id="success-modal" style="display:none;">
+    <div class="cs-modal">
+      <img src="/Extranet/assets/ec84644784fe9ed26d64e8bc6de42689683a4da1.png" alt="" width="124" height="124" class="cs-modal__illustration">
+      <div class="cs-modal__content">
+        <h2 class="cs-modal__title">Услуга создана!</h2>
+        <p class="cs-modal__subtitle">Как только услуга пройдёт модерацию, гости смогут её увидеть и забронировать. Обычно модерация занимает порядка 24 часов</p>
+      </div>
+      <button class="cs-modal__btn" id="modal-close-btn">Закрыть</button>
+    </div>
+  </div>
+
+  <!-- ─── Exceptions Drawer ───────────────────────────────────── -->
+  <div class="ex-drawer-overlay" id="exceptions-overlay"></div>
+  <div class="ex-drawer" id="exceptions-drawer">
+    <div class="ex-drawer__inner">
+
+      <!-- Header -->
+      <div class="ex-drawer__header">
+        <h2 class="ex-drawer__title">Выберите даты-исключения</h2>
+        <div class="ex-drawer__year-row">
+          <span class="ex-drawer__hotel-name">Выберите даты когда услуга не будет доступна</span>
+          <button class="ex-drawer__year-btn" id="drawer-year-btn">
+            <span id="drawer-year-label">2026</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 9.58236L12.7931 4.79249C13.1838 4.4021 13.817 4.40232 14.2073 4.79298C14.5977 5.18363 14.5975 5.8168 14.2069 6.20719L8.70687 11.7034C8.3164 12.0936 7.6836 12.0936 7.29313 11.7034L1.79313 6.20719C1.40248 5.8168 1.40226 5.18363 1.79265 4.79298C2.18304 4.40232 2.81621 4.4021 3.20687 4.79249L8 9.58236Z" fill="#0D0D0D"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Calendar -->
+      <div class="ex-drawer__calendar" id="drawer-calendar"></div>
+
+      <!-- Bottom button with fade -->
+      <div class="ex-drawer__footer" id="drawer-footer" style="display:none;">
+        <div class="ex-drawer__footer-summary">
+          <span class="ex-drawer__footer-title">Даты исключения</span>
+          <span class="ex-drawer__footer-range" id="drawer-range-label"></span>
+        </div>
+        <button class="ex-btn-primary ex-drawer__apply-btn" id="drawer-apply-btn">Применить</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Dropdown portal — вне всех контейнеров -->
+  <div class="cs-dropdown" id="category-dropdown" style="display:none; position:fixed; z-index:9999;">
+    <div class="cs-dropdown__item cs-dropdown__item--selected" data-value="all">Все категории</div>
+    <div class="cs-dropdown__item" data-value="selected">Только выбранные</div>
+  </div>
+
+  <div class="cs-dropdown" id="tax-type-dropdown" style="display:none; position:fixed; z-index:9999;">
+    <div class="cs-dropdown__item" data-value="osn-22">ОСН 22% НДС</div>
+    <div class="cs-dropdown__item" data-value="osn-0">ОСН 0% НДС</div>
+    <div class="cs-dropdown__item" data-value="osn-no-vat">ОСН не облагается НДС</div>
+    <div class="cs-dropdown__item" data-value="usn-22">УСН 22% НДС</div>
+    <div class="cs-dropdown__item" data-value="usn-7">УСН 7% НДС</div>
+    <div class="cs-dropdown__item" data-value="usn-5">УСН 5% НДС</div>
+  </div>
+
+  <div class="cs-dropdown" id="pricing-type-dropdown" style="display:none; position:fixed; z-index:9999;">
+    <div class="cs-dropdown__item" data-value="per-guest">За гостя</div>
+    <div class="cs-dropdown__item" data-value="per-guest-night">За гостя в сутки</div>
+    <div class="cs-dropdown__item" data-value="per-room">За номер</div>
+    <div class="cs-dropdown__item" data-value="per-room-night">За номер в сутки</div>
+  </div>
+
+  <div class="cs-dropdown" id="service-type-dropdown" style="display:none; position:fixed; z-index:9999;">
+    <div class="cs-dropdown__item" data-value="parking">Парковка</div>
+    <div class="cs-dropdown__item" data-value="pets">Проживание с животными</div>
+    <div class="cs-dropdown__item" data-value="spa">СПА-комплекс</div>
+    <div class="cs-dropdown__item" data-value="room-extras">Дополнения в номер</div>
+  </div>
+
+  <div class="cs-dropdown" id="parking-type-dropdown" style="display:none; position:fixed; z-index:9999;">
+    <div class="cs-dropdown__item" data-value="open">Открытая</div>
+    <div class="cs-dropdown__item" data-value="covered">Крытая</div>
+    <div class="cs-dropdown__item" data-value="underground">Подземная</div>
+    <div class="cs-dropdown__item" data-value="garage">Гараж</div>
+  </div>
+
+  <div class="cs-dropdown" id="pets-type-dropdown" style="display:none; position:fixed; z-index:9999;">
+    <div class="cs-dropdown__item" data-value="large-dogs">Проживание с крупными собаками</div>
+    <div class="cs-dropdown__item" data-value="small-dogs">Проживание с мелкими собаками</div>
+    <div class="cs-dropdown__item" data-value="cats">Проживание с кошками</div>
+  </div>
+
+  <div class="cs-dropdown" id="spa-type-dropdown" style="display:none; position:fixed; z-index:9999;">
+    <div class="cs-dropdown__item" data-value="pool">Бассейн</div>
+    <div class="cs-dropdown__item" data-value="sauna">Сауна</div>
+    <div class="cs-dropdown__item" data-value="bath">Баня</div>
+    <div class="cs-dropdown__item" data-value="jacuzzi">Джакузи</div>
+    <div class="cs-dropdown__item" data-value="hammam">Хаммам</div>
+  </div>
+
+  <div class="cs-dropdown" id="extras-type-dropdown" style="display:none; position:fixed; z-index:9999;">
+    <div class="cs-dropdown__item" data-value="flowers">Цветы в номер</div>
+    <div class="cs-dropdown__item" data-value="fruits">Фрукты в номер</div>
+    <div class="cs-dropdown__item" data-value="champagne">Шампанское в номер</div>
+    <div class="cs-dropdown__item" data-value="decoration">Украшение номера</div>
+  </div>
+
+  <script>
+    function toggleSubmenu() {
+      const submenu = document.getElementById('submenu-object');
+      const snippet = document.getElementById('snippet-object');
+      const arrow   = document.getElementById('object-arrow');
+      const isOpen  = submenu.classList.toggle('ex-submenu--open');
+      snippet.classList.toggle('ex-snippet--open', isOpen);
+      arrow.classList.toggle('ex-snippet__arrow--up', isOpen);
+    }
+
+    // Segmented control
+    document.querySelectorAll('.cs-segmented__tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.cs-segmented__tab').forEach(t => t.classList.remove('cs-segmented__tab--active'));
+        tab.classList.add('cs-segmented__tab--active');
+      });
+    });
+
+    // ─── Price input suffix ────────────────────────────────────
+    (function() {
+      const input  = document.getElementById('price-input');
+      const suffix = document.getElementById('price-suffix');
+
+      input.addEventListener('input', () => {
+        const hasValue = input.value !== '';
+        suffix.style.opacity = hasValue ? '1' : '0';
+
+        const preview = document.getElementById('preview-price');
+        if (hasValue) {
+          preview.textContent = input.value + ' ₽';
+          preview.classList.remove('cs-preview-card__value--placeholder');
+        } else {
+          preview.textContent = 'Укажите цену';
+          preview.classList.add('cs-preview-card__value--placeholder');
+        }
+      });
+    })();
+
+    // ─── Category dropdown ─────────────────────────────────────
+    (function() {
+      const select   = document.getElementById('category-select');
+      const label    = document.getElementById('category-label');
+      const arrow    = document.getElementById('category-arrow');
+      const dropdown = document.getElementById('category-dropdown');
+      const items    = dropdown.querySelectorAll('.cs-dropdown__item');
+      let isOpen     = false;
+
+      function open() {
+        const rect = select.getBoundingClientRect();
+        dropdown.style.display = 'block';
+        dropdown.style.top     = (rect.bottom + 8) + 'px';
+        dropdown.style.left    = rect.left + 'px';
+        dropdown.style.width   = rect.width + 'px';
+        arrow.style.transform  = 'rotate(180deg)';
+        isOpen = true;
+      }
+
+      function close() {
+        dropdown.style.display = 'none';
+        arrow.style.transform  = '';
+        isOpen = false;
+      }
+
+      select.addEventListener('click', (e) => {
+        e.stopPropagation();
+        isOpen ? close() : open();
+      });
+
+      items.forEach(item => {
+         item.addEventListener('click', (e) => {
+          e.stopPropagation();
+          label.textContent = item.textContent;
+          label.dataset.value = item.dataset.value;
+          label.classList.remove('cs-select__placeholder');
+          label.classList.add('cs-select__value');
+          items.forEach(i => i.classList.remove('cs-dropdown__item--selected'));
+          item.classList.add('cs-dropdown__item--selected');
+
+          // Показываем/скрываем блоки категорий
+          const roomList = document.getElementById('room-list');
+          const showRooms = item.dataset.value === 'selected';
+          roomList.style.display = showRooms ? 'flex' : 'none';
+
+          if (showRooms) {
+            requestAnimationFrame(() => {
+              roomList.scrollIntoView({ behavior: 'smooth', block: 'end' });
+            });
+          }
+
+          close();
+        });
+      });
+
+      document.addEventListener('click', () => { if (isOpen) close(); });
+      window.addEventListener('scroll', () => { if (isOpen) open(); }, true);
+      window.addEventListener('resize', () => { if (isOpen) open(); });
+    })();
+
+    // ─── Tax type dropdown ─────────────────────────────────────
+    (function() {
+      const select   = document.getElementById('tax-type-select');
+      const label    = document.getElementById('tax-type-label');
+      const arrow    = document.getElementById('tax-type-arrow');
+      const dropdown = document.getElementById('tax-type-dropdown');
+      const items    = dropdown.querySelectorAll('.cs-dropdown__item');
+      let isOpen     = false;
+
+      function open() {
+        const rect = select.getBoundingClientRect();
+        dropdown.style.display = 'block';
+        dropdown.style.top     = (rect.bottom + 8) + 'px';
+        dropdown.style.left    = rect.left + 'px';
+        dropdown.style.width   = rect.width + 'px';
+        arrow.style.transform  = 'rotate(180deg)';
+        isOpen = true;
+      }
+
+      function close() {
+        dropdown.style.display = 'none';
+        arrow.style.transform  = '';
+        isOpen = false;
+      }
+
+      select.addEventListener('click', (e) => {
+        e.stopPropagation();
+        isOpen ? close() : open();
+      });
+
+      items.forEach(item => {
+        item.addEventListener('click', (e) => {
+          e.stopPropagation();
+          label.textContent = item.textContent;
+          label.dataset.value = item.dataset.value;
+          label.classList.remove('cs-select__placeholder');
+          label.classList.add('cs-select__value');
+          items.forEach(i => i.classList.remove('cs-dropdown__item--selected'));
+          item.classList.add('cs-dropdown__item--selected');
+
+          // Обновляем превью
+          const preview = document.getElementById('preview-tax');
+          preview.textContent = item.textContent;
+          preview.classList.remove('cs-preview-card__value--placeholder');
+
+          close();
+        });
+      });
+
+      document.addEventListener('click', () => { if (isOpen) close(); });
+      window.addEventListener('scroll', () => { if (isOpen) open(); }, true);
+      window.addEventListener('resize', () => { if (isOpen) open(); });
+    })();
+
+    // ─── Pricing type dropdown ─────────────────────────────────
+    (function() {
+      const select   = document.getElementById('pricing-type-select');
+      const label    = document.getElementById('pricing-type-label');
+      const arrow    = document.getElementById('pricing-type-arrow');
+      const dropdown = document.getElementById('pricing-type-dropdown');
+      const items    = dropdown.querySelectorAll('.cs-dropdown__item');
+      let isOpen     = false;
+
+      function open() {
+        const rect = select.getBoundingClientRect();
+        dropdown.style.display = 'block';
+        dropdown.style.top     = (rect.bottom + 8) + 'px';
+        dropdown.style.left    = rect.left + 'px';
+        dropdown.style.width   = rect.width + 'px';
+        arrow.style.transform  = 'rotate(180deg)';
+        isOpen = true;
+      }
+
+      function close() {
+        dropdown.style.display = 'none';
+        arrow.style.transform  = '';
+        isOpen = false;
+      }
+
+      select.addEventListener('click', (e) => {
+        e.stopPropagation();
+        isOpen ? close() : open();
+      });
+
+      items.forEach(item => {
+        item.addEventListener('click', (e) => {
+          e.stopPropagation();
+          label.textContent = item.textContent;
+          label.dataset.value = item.dataset.value;
+          label.classList.remove('cs-select__placeholder');
+          label.classList.add('cs-select__value');
+          items.forEach(i => i.classList.remove('cs-dropdown__item--selected'));
+          item.classList.add('cs-dropdown__item--selected');
+
+          // Обновляем превью
+          const preview = document.getElementById('preview-pricing');
+          preview.textContent = item.textContent;
+          preview.classList.remove('cs-preview-card__value--placeholder');
+
+          close();
+        });
+      });
+
+      document.addEventListener('click', () => { if (isOpen) close(); });
+      window.addEventListener('scroll', () => { if (isOpen) open(); }, true);
+      window.addEventListener('resize', () => { if (isOpen) open(); });
+    })();
+
+    // Service type dropdown
+    const select   = document.getElementById('service-type-select');
+    const label    = document.getElementById('service-type-label');
+    const arrow    = document.getElementById('service-type-arrow');
+    const dropdown = document.getElementById('service-type-dropdown');
+    const items    = dropdown.querySelectorAll('.cs-dropdown__item');
+    let isOpen     = false;
+
+    function openDropdown() {
+      const rect = select.getBoundingClientRect();
+      dropdown.style.display = 'block';
+      dropdown.style.top     = (rect.bottom + 8) + 'px';
+      dropdown.style.left    = rect.left + 'px';
+      dropdown.style.width   = rect.width + 'px';
+      arrow.style.transform  = 'rotate(180deg)';
+      isOpen = true;
+    }
+
+    function closeDropdown() {
+      dropdown.style.display = 'none';
+      arrow.style.transform  = '';
+      isOpen = false;
+    }
+
+    select.addEventListener('click', (e) => {
+      e.stopPropagation();
+      isOpen ? closeDropdown() : openDropdown();
+    });
+
+    items.forEach(item => {
+      item.addEventListener('click', (e) => {
+        e.stopPropagation();
+        label.textContent = item.textContent;
+        label.dataset.value = item.dataset.value;
+        label.classList.remove('cs-select__placeholder');
+        label.classList.add('cs-select__value');
+        items.forEach(i => i.classList.remove('cs-dropdown__item--selected'));
+        item.classList.add('cs-dropdown__item--selected');
+
+          // Показываем/скрываем поле «Вид парковки»
+        const parkingField = document.getElementById('parking-type-field');
+        const petsField    = document.getElementById('pets-type-field');
+
+        // Сброс парковки
+        const ptLabel = document.getElementById('parking-type-label');
+        parkingField.style.display = 'none';
+        ptLabel.textContent = 'Выберите вид парковки';
+        ptLabel.dataset.value = '';
+        ptLabel.classList.remove('cs-select__value');
+        ptLabel.classList.add('cs-select__placeholder');
+        document.getElementById('parking-type-select').classList.remove('cs-select--error');
+        document.querySelectorAll('#parking-type-dropdown .cs-dropdown__item')
+          .forEach(i => i.classList.remove('cs-dropdown__item--selected'));
+
+        // Сброс животных
+        const peLabel = document.getElementById('pets-type-label');
+        petsField.style.display = 'none';
+        peLabel.textContent = 'Выберите тип проживания';
+        peLabel.dataset.value = '';
+        peLabel.classList.remove('cs-select__value');
+        peLabel.classList.add('cs-select__placeholder');
+        document.getElementById('pets-type-select').classList.remove('cs-select--error');
+        document.querySelectorAll('#pets-type-dropdown .cs-dropdown__item')
+          .forEach(i => i.classList.remove('cs-dropdown__item--selected'));
+
+        // Сброс СПА
+        const spaField = document.getElementById('spa-type-field');
+        const spaLabel = document.getElementById('spa-type-label');
+        spaField.style.display = 'none';
+        spaLabel.textContent = 'Выберите тип СПА-комплекса';
+        spaLabel.dataset.value = '';
+        spaLabel.classList.remove('cs-select__value');
+        spaLabel.classList.add('cs-select__placeholder');
+        document.getElementById('spa-type-select').classList.remove('cs-select--error');
+        document.querySelectorAll('#spa-type-dropdown .cs-dropdown__item')
+          .forEach(i => i.classList.remove('cs-dropdown__item--selected'));
+
+        // Сброс дополнений в номер
+        const extrasField = document.getElementById('extras-type-field');
+        const extrasLabel = document.getElementById('extras-type-label');
+        extrasField.style.display = 'none';
+        extrasLabel.textContent = 'Выберите тип дополнения';
+        extrasLabel.dataset.value = '';
+        extrasLabel.classList.remove('cs-select__value');
+        extrasLabel.classList.add('cs-select__placeholder');
+        document.getElementById('extras-type-select').classList.remove('cs-select--error');
+        document.querySelectorAll('#extras-type-dropdown .cs-dropdown__item')
+          .forEach(i => i.classList.remove('cs-dropdown__item--selected'));
+
+        // Сбрасываем название в превью
+        const previewName = document.getElementById('preview-name');
+        previewName.textContent = 'Укажите название';
+        previewName.classList.add('cs-preview-card__value--placeholder');
+
+        // Обновляем плейсхолдер поля «Описание»
+        const descriptionInput = document.getElementById('description-input');
+        if (item.dataset.value === 'pets') {
+          descriptionInput.placeholder = 'Укажите какие удобства для животного вы можете предоставить';
+        } else if (item.dataset.value === 'spa') {
+          descriptionInput.placeholder = 'Подробно опишите что входит в эту услугу';
+        } else {
+          descriptionInput.placeholder = 'Например: закрытый тёплый паркинг';
+        }
+
+        if (item.dataset.value === 'parking') {
+          parkingField.style.display = 'flex';
+        } else if (item.dataset.value === 'pets') {
+          petsField.style.display = 'flex';
+        } else if (item.dataset.value === 'spa') {
+          spaField.style.display = 'flex';
+        } else if (item.dataset.value === 'room-extras') {
+          extrasField.style.display = 'flex';
+        }
+
+        closeDropdown();
+      });
+    });
+
+    document.addEventListener('click', () => {
+      if (isOpen) closeDropdown();
+    });
+
+    // Reposition on scroll/resize
+    window.addEventListener('scroll', () => { if (isOpen) openDropdown(); }, true);
+    window.addEventListener('resize', () => { if (isOpen) openDropdown(); });
+
+    // Снимаем ошибку с service-type-select при выборе значения
+    document.querySelectorAll('#service-type-dropdown .cs-dropdown__item').forEach(item => {
+      item.addEventListener('click', () => {
+        document.getElementById('service-type-select').classList.remove('cs-select--error');
+      });
+    });
+
+    // ─── Parking type dropdown ─────────────────────────────────
+    (function() {
+      const ptSelect   = document.getElementById('parking-type-select');
+      const ptLabel    = document.getElementById('parking-type-label');
+      const ptArrow    = document.getElementById('parking-type-arrow');
+      const ptDropdown = document.getElementById('parking-type-dropdown');
+      const ptItems    = ptDropdown.querySelectorAll('.cs-dropdown__item');
+      let ptOpen       = false;
+
+      function ptOpenFn() {
+        const rect = ptSelect.getBoundingClientRect();
+        ptDropdown.style.display = 'block';
+        ptDropdown.style.top     = (rect.bottom + 8) + 'px';
+        ptDropdown.style.left    = rect.left + 'px';
+        ptDropdown.style.width   = rect.width + 'px';
+        ptArrow.style.transform  = 'rotate(180deg)';
+        ptOpen = true;
+      }
+
+      function ptCloseFn() {
+        ptDropdown.style.display = 'none';
+        ptArrow.style.transform  = '';
+        ptOpen = false;
+      }
+
+      ptSelect.addEventListener('click', (e) => {
+        e.stopPropagation();
+        ptOpen ? ptCloseFn() : ptOpenFn();
+      });
+
+      ptItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+          e.stopPropagation();
+          ptLabel.textContent = item.textContent;
+          ptLabel.dataset.value = item.dataset.value;
+          ptLabel.classList.remove('cs-select__placeholder');
+          ptLabel.classList.add('cs-select__value');
+          ptItems.forEach(i => i.classList.remove('cs-dropdown__item--selected'));
+          item.classList.add('cs-dropdown__item--selected');
+
+          // Пробрасываем название в превью
+          const previewName = document.getElementById('preview-name');
+          previewName.textContent = item.textContent + ' парковка';
+          previewName.classList.remove('cs-preview-card__value--placeholder');
+
+          ptCloseFn();
+        });
+      });
+
+      document.addEventListener('click', () => { if (ptOpen) ptCloseFn(); });
+      window.addEventListener('scroll', () => { if (ptOpen) ptOpenFn(); }, true);
+      window.addEventListener('resize', () => { if (ptOpen) ptOpenFn(); });
+    })();
+
+    // ─── Pets type dropdown ────────────────────────────────────
+    (function() {
+      const peSelect   = document.getElementById('pets-type-select');
+      const peLabel    = document.getElementById('pets-type-label');
+      const peArrow    = document.getElementById('pets-type-arrow');
+      const peDropdown = document.getElementById('pets-type-dropdown');
+      const peItems    = peDropdown.querySelectorAll('.cs-dropdown__item');
+      let peOpen       = false;
+
+      function peOpenFn() {
+        const rect = peSelect.getBoundingClientRect();
+        peDropdown.style.display = 'block';
+        peDropdown.style.top     = (rect.bottom + 8) + 'px';
+        peDropdown.style.left    = rect.left + 'px';
+        peDropdown.style.width   = rect.width + 'px';
+        peArrow.style.transform  = 'rotate(180deg)';
+        peOpen = true;
+      }
+
+      function peCloseFn() {
+        peDropdown.style.display = 'none';
+        peArrow.style.transform  = '';
+        peOpen = false;
+      }
+
+      peSelect.addEventListener('click', (e) => {
+        e.stopPropagation();
+        peOpen ? peCloseFn() : peOpenFn();
+      });
+
+      peItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+          e.stopPropagation();
+          peLabel.textContent = item.textContent;
+          peLabel.dataset.value = item.dataset.value;
+          peLabel.classList.remove('cs-select__placeholder');
+          peLabel.classList.add('cs-select__value');
+          peItems.forEach(i => i.classList.remove('cs-dropdown__item--selected'));
+          item.classList.add('cs-dropdown__item--selected');
+          peSelect.classList.remove('cs-select--error');
+
+          // Пробрасываем название в превью
+          const previewName = document.getElementById('preview-name');
+          previewName.textContent = item.textContent;
+          previewName.classList.remove('cs-preview-card__value--placeholder');
+
+          peCloseFn();
+        });
+      });
+
+      document.addEventListener('click', () => { if (peOpen) peCloseFn(); });
+      window.addEventListener('scroll', () => { if (peOpen) peOpenFn(); }, true);
+      window.addEventListener('resize', () => { if (peOpen) peOpenFn(); });
+    })();
+
+    // ─── Spa type dropdown ─────────────────────────────────────
+    (function() {
+      const spSelect   = document.getElementById('spa-type-select');
+      const spLabel    = document.getElementById('spa-type-label');
+      const spArrow    = document.getElementById('spa-type-arrow');
+      const spDropdown = document.getElementById('spa-type-dropdown');
+      const spItems    = spDropdown.querySelectorAll('.cs-dropdown__item');
+      let spOpen       = false;
+
+      function spOpenFn() {
+        const rect = spSelect.getBoundingClientRect();
+        spDropdown.style.display = 'block';
+        spDropdown.style.top     = (rect.bottom + 8) + 'px';
+        spDropdown.style.left    = rect.left + 'px';
+        spDropdown.style.width   = rect.width + 'px';
+        spArrow.style.transform  = 'rotate(180deg)';
+        spOpen = true;
+      }
+
+      function spCloseFn() {
+        spDropdown.style.display = 'none';
+        spArrow.style.transform  = '';
+        spOpen = false;
+      }
+
+      spSelect.addEventListener('click', (e) => {
+        e.stopPropagation();
+        spOpen ? spCloseFn() : spOpenFn();
+      });
+
+      spItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+          e.stopPropagation();
+          spLabel.textContent = item.textContent;
+          spLabel.dataset.value = item.dataset.value;
+          spLabel.classList.remove('cs-select__placeholder');
+          spLabel.classList.add('cs-select__value');
+          spItems.forEach(i => i.classList.remove('cs-dropdown__item--selected'));
+          item.classList.add('cs-dropdown__item--selected');
+          spSelect.classList.remove('cs-select--error');
+
+          // Пробрасываем название в превью
+          const previewName = document.getElementById('preview-name');
+          previewName.textContent = item.textContent;
+          previewName.classList.remove('cs-preview-card__value--placeholder');
+
+          spCloseFn();
+        });
+      });
+
+      document.addEventListener('click', () => { if (spOpen) spCloseFn(); });
+      window.addEventListener('scroll', () => { if (spOpen) spOpenFn(); }, true);
+      window.addEventListener('resize', () => { if (spOpen) spOpenFn(); });
+    })();
+
+    // ─── Extras type dropdown ──────────────────────────────────
+    (function() {
+      const exSelect   = document.getElementById('extras-type-select');
+      const exLabel    = document.getElementById('extras-type-label');
+      const exArrow    = document.getElementById('extras-type-arrow');
+      const exDropdown = document.getElementById('extras-type-dropdown');
+      const exItems    = exDropdown.querySelectorAll('.cs-dropdown__item');
+      let exOpen       = false;
+
+      function exOpenFn() {
+        const rect = exSelect.getBoundingClientRect();
+        exDropdown.style.display = 'block';
+        exDropdown.style.top     = (rect.bottom + 8) + 'px';
+        exDropdown.style.left    = rect.left + 'px';
+        exDropdown.style.width   = rect.width + 'px';
+        exArrow.style.transform  = 'rotate(180deg)';
+        exOpen = true;
+      }
+
+      function exCloseFn() {
+        exDropdown.style.display = 'none';
+        exArrow.style.transform  = '';
+        exOpen = false;
+      }
+
+      exSelect.addEventListener('click', (e) => {
+        e.stopPropagation();
+        exOpen ? exCloseFn() : exOpenFn();
+      });
+
+      exItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+          e.stopPropagation();
+          exLabel.textContent = item.textContent;
+          exLabel.dataset.value = item.dataset.value;
+          exLabel.classList.remove('cs-select__placeholder');
+          exLabel.classList.add('cs-select__value');
+          exItems.forEach(i => i.classList.remove('cs-dropdown__item--selected'));
+          item.classList.add('cs-dropdown__item--selected');
+          exSelect.classList.remove('cs-select--error');
+
+          // Пробрасываем название в превью
+          const previewName = document.getElementById('preview-name');
+          previewName.textContent = item.textContent;
+          previewName.classList.remove('cs-preview-card__value--placeholder');
+
+          exCloseFn();
+        });
+      });
+
+      document.addEventListener('click', () => { if (exOpen) exCloseFn(); });
+      window.addEventListener('scroll', () => { if (exOpen) exOpenFn(); }, true);
+      window.addEventListener('resize', () => { if (exOpen) exOpenFn(); });
+    })();
+
+    // ─── Отслеживание изменений в режиме редактирования ───────
+    (function() {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('edit') === null) return;
+
+      const saveBtn = document.getElementById('save-btn');
+      let editReady = false; // флаг: форма восстановлена, теперь можно отслеживать изменения
+
+      // Разрешаем отслеживание только после полного восстановления формы
+      // restoreSelect и другой код редактирования выполняется синхронно,
+      // поэтому откладываем через setTimeout
+      setTimeout(() => { editReady = true; }, 0);
+
+      function showSaveBtn() {
+        if (!editReady) return;
+        saveBtn.style.display = 'block';
+      }
+
+      // Следим за всеми дропдаунами — при клике на любой item
+      document.querySelectorAll('.cs-dropdown__item').forEach(item => {
+        item.addEventListener('click', showSaveBtn);
+      });
+
+      // Следим за ценой
+      const priceInput = document.getElementById('price-input');
+      if (priceInput) priceInput.addEventListener('input', showSaveBtn);
+
+      // Следим за описанием
+      const descInput = document.getElementById('description-input');
+      if (descInput) descInput.addEventListener('input', showSaveBtn);
+
+      // Следим за тоглами категорий
+      document.querySelectorAll('#room-list input[data-room]').forEach(cb => {
+        cb.addEventListener('change', showSaveBtn);
+      });
+
+      // Кнопка «Сохранить изменения» — сохраняем и переходим в список
+      saveBtn.addEventListener('click', () => {
+        const editIndex = parseInt(params.get('edit'));
+        const serviceTypeLabel = document.getElementById('service-type-label');
+        const parkingTypeLabel = document.getElementById('parking-type-label');
+        const pricingTypeLabel = document.getElementById('pricing-type-label');
+        const taxTypeLabel     = document.getElementById('tax-type-label');
+        const categoryLabel    = document.getElementById('category-label');
+
+        const serviceRecord = {
+          serviceType:     serviceTypeLabel.dataset.value || '',
+          serviceTypeText: serviceTypeLabel.classList.contains('cs-select__placeholder') ? '' : serviceTypeLabel.textContent,
+          parkingType:     parkingTypeLabel.dataset.value || '',
+          parkingTypeText: parkingTypeLabel.classList.contains('cs-select__placeholder') ? '' : parkingTypeLabel.textContent,
+          petsType:        document.getElementById('pets-type-label').dataset.value || '',
+          petsTypeText:    document.getElementById('pets-type-label').classList.contains('cs-select__placeholder') ? '' : document.getElementById('pets-type-label').textContent,
+          spaType:         document.getElementById('spa-type-label').dataset.value || '',
+          spaTypeText:     document.getElementById('spa-type-label').classList.contains('cs-select__placeholder') ? '' : document.getElementById('spa-type-label').textContent,
+          extrasType:      document.getElementById('extras-type-label').dataset.value || '',
+          extrasTypeText:  document.getElementById('extras-type-label').classList.contains('cs-select__placeholder') ? '' : document.getElementById('extras-type-label').textContent,
+          name:            document.getElementById('preview-name').textContent,
+          description:     document.getElementById('description-input').value,
+          category:        categoryLabel.dataset.value || 'all',
+          categoryText:    categoryLabel.classList.contains('cs-select__placeholder') ? '' : categoryLabel.textContent,
+          selectedRooms:   Array.from(document.querySelectorAll('#room-list input[data-room]:checked')).map(cb => cb.dataset.room),
+          pricing:         pricingTypeLabel.classList.contains('cs-select__placeholder') ? '' : pricingTypeLabel.textContent,
+          pricingValue:    pricingTypeLabel.dataset.value || '',
+          price:           document.getElementById('price-input').value,
+          priceDisplay:    document.getElementById('preview-price').textContent,
+          tax:             taxTypeLabel.classList.contains('cs-select__placeholder') ? '' : taxTypeLabel.textContent,
+          taxValue:        taxTypeLabel.dataset.value || '',
+          exceptions:      Array.from(document.querySelectorAll('#exceptions-chips .cs-exceptions-chip')).map(c => ({ label: c.textContent, lo: c.dataset.lo, hi: c.dataset.hi || '' })),
+        };
+
+        const services = JSON.parse(localStorage.getItem('extranet_services') || '[]');
+        services[editIndex] = serviceRecord;
+        localStorage.setItem('extranet_services', JSON.stringify(services));
+        window.location.href = '/Extranet/paid-services.html';
+      });
+    })();
+
+    // ─── Delete Modal ─────────────────────────────────────────
+    (function() {
+      const deleteModal   = document.getElementById('delete-modal');
+      const deleteClose   = document.getElementById('delete-modal-close');
+      const deleteConfirm = document.getElementById('delete-confirm-btn');
+      const deleteCancel  = document.getElementById('delete-cancel-btn');
+      const submitBtn     = document.getElementById('submit-btn');
+
+      // Открываем модалку по кнопке «Удалить услугу»
+      document.addEventListener('click', (e) => {
+        if (e.target === submitBtn && submitBtn.classList.contains('cs-btn-delete')) {
+          deleteModal.style.display = 'flex';
+        }
+      });
+
+      function closeDeleteModal() {
+        deleteModal.style.display = 'none';
+      }
+
+      deleteClose.addEventListener('click', closeDeleteModal);
+      deleteCancel.addEventListener('click', closeDeleteModal);
+      deleteModal.addEventListener('click', (e) => {
+        if (e.target === deleteModal) closeDeleteModal();
+      });
+
+      deleteConfirm.addEventListener('click', () => {
+        // Удаляем услугу из localStorage
+        const params = new URLSearchParams(window.location.search);
+        const editIndex = params.get('edit');
+        if (editIndex !== null) {
+          const services = JSON.parse(localStorage.getItem('extranet_services') || '[]');
+          services.splice(parseInt(editIndex), 1);
+          localStorage.setItem('extranet_services', JSON.stringify(services));
+        } else {
+          const services = JSON.parse(localStorage.getItem('extranet_services') || '[]');
+          services.pop();
+          localStorage.setItem('extranet_services', JSON.stringify(services));
+        }
+
+        // Закрываем модалку удаления и показываем модалку «Услуга удалена»
+        closeDeleteModal();
+        document.getElementById('deleted-modal').style.display = 'flex';
+      });
+    })();
+
+    // ─── Deleted Modal ────────────────────────────────────────
+    (function() {
+      const deletedModal  = document.getElementById('deleted-modal');
+      const deletedClose  = document.getElementById('deleted-modal-close-btn');
+
+      function onDeletedClose() {
+        window.location.href = '/Extranet/paid-services.html';
+      }
+
+      deletedClose.addEventListener('click', onDeletedClose);
+      deletedModal.addEventListener('click', (e) => {
+        if (e.target === deletedModal) onDeletedClose();
+      });
+    })();
+
+    // ─── Пресет типа услуги (из amenities) ────────────────────
+    (function() {
+      const params = new URLSearchParams(window.location.search);
+      const preset = params.get('preset');
+      if (!preset) return;
+
+      function presetSelect(labelId, dropdownId, value) {
+        const label = document.getElementById(labelId);
+        const item  = document.querySelector('#' + dropdownId + ' [data-value="' + value + '"]');
+        if (!label || !item) return;
+        label.textContent   = item.textContent;
+        label.dataset.value = value;
+        label.classList.remove('cs-select__placeholder');
+        label.classList.add('cs-select__value');
+        item.classList.add('cs-dropdown__item--selected');
+      }
+
+      presetSelect('service-type-label', 'service-type-dropdown', preset);
+
+      // Показываем подтип если нужно
+      if (preset === 'parking') {
+        document.getElementById('parking-type-field').style.display = 'flex';
+      } else if (preset === 'pets') {
+        document.getElementById('pets-type-field').style.display = 'flex';
+      } else if (preset === 'spa') {
+        document.getElementById('spa-type-field').style.display = 'flex';
+      } else if (preset === 'room-extras') {
+        document.getElementById('extras-type-field').style.display = 'flex';
+      }
+
+      // Обновляем превью в правой карточке
+      const previewName = document.getElementById('preview-name');
+      if (previewName) {
+        const label = document.getElementById('service-type-label');
+        if (label) previewName.textContent = label.textContent;
+      }
+    })();
+
+    // ─── Режим редактирования (из paid-services) ──────────────
+    (function() {
+      const params = new URLSearchParams(window.location.search);
+      const editIndex = params.get('edit');
+      if (editIndex === null) return;
+
+      const services = JSON.parse(localStorage.getItem('extranet_services') || '[]');
+      const s = services[parseInt(editIndex)];
+      if (!s) return;
+
+      // Вспомогательная функция: выбрать значение в кастомном дропдауне
+      function restoreSelect(labelId, dropdownId, value) {
+        if (!value) return;
+        const label = document.getElementById(labelId);
+        const item  = document.querySelector(`#${dropdownId} [data-value="${value}"]`);
+        if (!item) return;
+        label.textContent   = item.textContent;
+        label.dataset.value = value;
+        label.classList.remove('cs-select__placeholder');
+        label.classList.add('cs-select__value');
+        item.classList.add('cs-dropdown__item--selected');
+      }
+
+      // Тип услуги
+      restoreSelect('service-type-label', 'service-type-dropdown', s.serviceType);
+
+      // Вид парковки (если парковка)
+      if (s.serviceType === 'parking' && s.parkingType) {
+        document.getElementById('parking-type-field').style.display = 'flex';
+        restoreSelect('parking-type-label', 'parking-type-dropdown', s.parkingType);
+      }
+
+      // Тип проживания с животными
+      if (s.serviceType === 'pets' && s.petsType) {
+        document.getElementById('pets-type-field').style.display = 'flex';
+        restoreSelect('pets-type-label', 'pets-type-dropdown', s.petsType);
+      }
+
+      // Тип СПА-комплекса
+      if (s.serviceType === 'spa' && s.spaType) {
+        document.getElementById('spa-type-field').style.display = 'flex';
+        restoreSelect('spa-type-label', 'spa-type-dropdown', s.spaType);
+      }
+
+      // Тип дополнения в номер
+      if (s.serviceType === 'room-extras' && s.extrasType) {
+        document.getElementById('extras-type-field').style.display = 'flex';
+        restoreSelect('extras-type-label', 'extras-type-dropdown', s.extrasType);
+      }
+
+      // Даты исключения (восстанавливаем после инициализации drawer)
+      window.addEventListener('load', () => {
+        if (s.exceptions && s.exceptions.length > 0) {
+          const chipsEl = document.getElementById('exceptions-chips');
+          s.exceptions.forEach(ex => {
+            const chip = document.createElement('div');
+            chip.className = 'cs-exceptions-chip';
+            chip.textContent = ex.label;
+            chip.dataset.lo = ex.lo;
+            if (ex.hi) chip.dataset.hi = ex.hi;
+            chip.addEventListener('click', () => {
+              if (window.__openExceptionsDrawer) window.__openExceptionsDrawer(chip);
+            });
+            chipsEl.appendChild(chip);
+          });
+          chipsEl.style.display = 'flex';
+        }
+      });
+
+      // Описание
+      if (s.description) {
+        document.getElementById('description-input').value = s.description;
+      }
+
+      // Категории номеров
+      restoreSelect('category-label', 'category-dropdown', s.category || 'all');
+
+      // Если выбраны «Только выбранные» — показываем room-list и проставляем чекбоксы
+      if (s.category === 'selected') {
+        document.getElementById('room-list').style.display = 'flex';
+        if (s.selectedRooms) {
+          s.selectedRooms.forEach(roomName => {
+            const cb = document.querySelector(`#room-list input[data-room="${roomName}"]`);
+            if (cb) cb.checked = true;
+          });
+        }
+      }
+
+      // Расчёт стоимости
+      restoreSelect('pricing-type-label', 'pricing-type-dropdown', s.pricingValue);
+
+      // НДС
+      restoreSelect('tax-type-label', 'tax-type-dropdown', s.taxValue);
+
+      // Цена
+      if (s.price) {
+        const priceInput = document.getElementById('price-input');
+        priceInput.value = s.price;
+        priceInput.dispatchEvent(new Event('input'));
+      }
+
+      // Превью
+      const previewName = document.getElementById('preview-name');
+      if (s.name) {
+        previewName.textContent = s.name;
+        previewName.classList.remove('cs-preview-card__value--placeholder');
+      }
+
+      if (s.pricing) {
+        const el = document.getElementById('preview-pricing');
+        el.textContent = s.pricing;
+        el.classList.remove('cs-preview-card__value--placeholder');
+      }
+
+      if (s.tax) {
+        const el = document.getElementById('preview-tax');
+        el.textContent = s.tax;
+        el.classList.remove('cs-preview-card__value--placeholder');
+      }
+
+      // Переводим в состояние «после создания»
+      document.getElementById('page-title').textContent = 'Услуга';
+      document.getElementById('success-inform').style.display = 'flex';
+
+      const submitBtn = document.getElementById('submit-btn');
+      submitBtn.textContent = 'Удалить услугу';
+      submitBtn.classList.remove('ex-btn-primary');
+      submitBtn.classList.add('cs-btn-delete');
+
+      const serviceTypeSelect = document.getElementById('service-type-select');
+      serviceTypeSelect.classList.add('cs-select--disabled');
+      serviceTypeSelect.style.pointerEvents = 'none';
+    })();
+
+    // ─── Success Modal ────────────────────────────────────────
+    (function() {
+      const modal      = document.getElementById('success-modal');
+      const closeBtn   = document.getElementById('modal-close-btn');
+      const submitBtn  = document.getElementById('submit-btn');
+      const inform     = document.getElementById('success-inform');
+
+      submitBtn.addEventListener('click', () => {
+        // Открываем только если кнопка в состоянии «Создать услугу»
+        if (submitBtn.classList.contains('cs-btn-delete')) return;
+
+        // Валидация обязательных полей
+        const fields = [
+          document.getElementById('service-type-select'),
+          document.getElementById('pricing-type-select'),
+          document.getElementById('tax-type-select'),
+        ];
+        const labels = [
+          document.getElementById('service-type-label'),
+          document.getElementById('pricing-type-label'),
+          document.getElementById('tax-type-label'),
+        ];
+
+        let valid = true;
+        fields.forEach((field, i) => {
+          const lbl = labels[i];
+          const hasValue = lbl.dataset.value && lbl.dataset.value.trim() !== '';
+          if (!hasValue) {
+            field.classList.add('cs-select--error');
+            valid = false;
+          } else {
+            field.classList.remove('cs-select--error');
+          }
+        });
+
+        // Валидация «Вид парковки» — только если выбрана «Парковка»
+        const serviceTypeLabel = document.getElementById('service-type-label');
+        if (serviceTypeLabel.dataset.value === 'parking') {
+          const parkingSelect = document.getElementById('parking-type-select');
+          const parkingLabel  = document.getElementById('parking-type-label');
+          const hasParking    = parkingLabel.dataset.value && parkingLabel.dataset.value.trim() !== '';
+          if (!hasParking) {
+            parkingSelect.classList.add('cs-select--error');
+            valid = false;
+          } else {
+            parkingSelect.classList.remove('cs-select--error');
+          }
+        }
+
+        // Валидация «Тип проживания» — только если выбраны «Проживание с животными»
+        if (serviceTypeLabel.dataset.value === 'pets') {
+          const petsSelect = document.getElementById('pets-type-select');
+          const petsLabel  = document.getElementById('pets-type-label');
+          const hasPets    = petsLabel.dataset.value && petsLabel.dataset.value.trim() !== '';
+          if (!hasPets) {
+            petsSelect.classList.add('cs-select--error');
+            valid = false;
+          } else {
+            petsSelect.classList.remove('cs-select--error');
+          }
+        }
+
+        // Валидация «Тип СПА-комплекса» — только если выбран «СПА-комплекс»
+        if (serviceTypeLabel.dataset.value === 'spa') {
+          const spaSelect = document.getElementById('spa-type-select');
+          const spaLabel  = document.getElementById('spa-type-label');
+          const hasSpa    = spaLabel.dataset.value && spaLabel.dataset.value.trim() !== '';
+          if (!hasSpa) {
+            spaSelect.classList.add('cs-select--error');
+            valid = false;
+          } else {
+            spaSelect.classList.remove('cs-select--error');
+          }
+        }
+
+        // Валидация «Тип дополнения» — только если выбраны «Дополнения в номер»
+        if (serviceTypeLabel.dataset.value === 'room-extras') {
+          const extrasSelect = document.getElementById('extras-type-select');
+          const extrasLabel  = document.getElementById('extras-type-label');
+          const hasExtras    = extrasLabel.dataset.value && extrasLabel.dataset.value.trim() !== '';
+          if (!hasExtras) {
+            extrasSelect.classList.add('cs-select--error');
+            valid = false;
+          } else {
+            extrasSelect.classList.remove('cs-select--error');
+          }
+        }
+
+        if (!valid) return;
+
+        modal.style.display = 'flex';
+      });
+
+      // Снимаем подсветку ошибки при выборе значения в дропдауне
+      [
+        { selectId: 'service-type-select',  dropdownId: 'service-type-dropdown' },
+        { selectId: 'pricing-type-select',  dropdownId: 'pricing-type-dropdown' },
+        { selectId: 'tax-type-select',      dropdownId: 'tax-type-dropdown' },
+        { selectId: 'parking-type-select',  dropdownId: 'parking-type-dropdown' },
+        { selectId: 'spa-type-select',      dropdownId: 'spa-type-dropdown' },
+        { selectId: 'extras-type-select',   dropdownId: 'extras-type-dropdown' },
+      ].forEach(({ selectId, dropdownId }) => {
+        const dropdown = document.getElementById(dropdownId);
+        dropdown.querySelectorAll('.cs-dropdown__item').forEach(item => {
+          item.addEventListener('click', () => {
+            document.getElementById(selectId).classList.remove('cs-select--error');
+          });
+        });
+      });
+
+      function onClose() {
+        modal.style.display = 'none';
+        // Показываем информер
+        inform.style.display = 'flex';
+        // Меняем кнопку на «Удалить услугу»
+        submitBtn.textContent = 'Удалить услугу';
+        submitBtn.classList.remove('ex-btn-primary');
+        submitBtn.classList.add('cs-btn-delete');
+        // Меняем заголовок страницы
+        document.getElementById('page-title').textContent = 'Услуга';
+        // Делаем поле «Тип услуги» неактивным
+        const serviceTypeSelect = document.getElementById('service-type-select');
+        serviceTypeSelect.classList.add('cs-select--disabled');
+        serviceTypeSelect.style.pointerEvents = 'none';
+
+        // Сохраняем данные услуги в localStorage (полная структура)
+        const params = new URLSearchParams(window.location.search);
+        const editIndex = params.get('edit');
+
+        // Читаем значения всех полей
+        const serviceTypeLabel   = document.getElementById('service-type-label');
+        const parkingTypeLabel   = document.getElementById('parking-type-label');
+        const pricingTypeLabel   = document.getElementById('pricing-type-label');
+        const taxTypeLabel       = document.getElementById('tax-type-label');
+        const categoryLabel      = document.getElementById('category-label');
+
+        const serviceRecord = {
+          // Тип услуги
+          serviceType:      serviceTypeLabel.dataset.value || '',
+          serviceTypeText:  serviceTypeLabel.classList.contains('cs-select__placeholder') ? '' : serviceTypeLabel.textContent,
+          // Вид парковки
+          parkingType:      parkingTypeLabel.dataset.value || '',
+          parkingTypeText:  parkingTypeLabel.classList.contains('cs-select__placeholder') ? '' : parkingTypeLabel.textContent,
+          // Тип проживания с животными
+          petsType:         document.getElementById('pets-type-label').dataset.value || '',
+          petsTypeText:     document.getElementById('pets-type-label').classList.contains('cs-select__placeholder') ? '' : document.getElementById('pets-type-label').textContent,
+          // Тип СПА-комплекса
+          spaType:          document.getElementById('spa-type-label').dataset.value || '',
+          spaTypeText:      document.getElementById('spa-type-label').classList.contains('cs-select__placeholder') ? '' : document.getElementById('spa-type-label').textContent,
+          // Тип дополнения в номер
+          extrasType:       document.getElementById('extras-type-label').dataset.value || '',
+          extrasTypeText:   document.getElementById('extras-type-label').classList.contains('cs-select__placeholder') ? '' : document.getElementById('extras-type-label').textContent,
+          // Название (превью)
+          name:             document.getElementById('preview-name').textContent,
+          // Описание
+          description:      document.getElementById('description-input').value,
+          // Категории номеров
+          category:         categoryLabel.dataset.value || 'all',
+          categoryText:     categoryLabel.classList.contains('cs-select__placeholder') ? '' : categoryLabel.textContent,
+          selectedRooms:    Array.from(document.querySelectorAll('#room-list input[data-room]:checked')).map(cb => cb.dataset.room),
+          // Расчёт стоимости
+          pricing:          pricingTypeLabel.classList.contains('cs-select__placeholder') ? '' : pricingTypeLabel.textContent,
+          pricingValue:     pricingTypeLabel.dataset.value || '',
+          // Цена
+          price:            document.getElementById('price-input').value,
+          priceDisplay:     document.getElementById('preview-price').textContent,
+          // НДС
+          tax:              taxTypeLabel.classList.contains('cs-select__placeholder') ? '' : taxTypeLabel.textContent,
+          taxValue:         taxTypeLabel.dataset.value || '',
+          // Даты исключения
+          exceptions:       Array.from(document.querySelectorAll('#exceptions-chips .cs-exceptions-chip')).map(c => ({ label: c.textContent, lo: c.dataset.lo, hi: c.dataset.hi || '' })),
+        };
+
+        const services = JSON.parse(localStorage.getItem('extranet_services') || '[]');
+        if (editIndex !== null) {
+          services[parseInt(editIndex)] = serviceRecord;
+        } else {
+          services.push(serviceRecord);
+        }
+        localStorage.setItem('extranet_services', JSON.stringify(services));
+        window.location.href = '/Extranet/paid-services.html';
+      }
+
+      closeBtn.addEventListener('click', onClose);
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) onClose();
+      });
+    })();
+
+    // ─── Photo upload ──────────────────────────────────────────
+    const photoInput    = document.getElementById('photo-input');
+    const photoDropzone = document.getElementById('photo-dropzone');
+    const photoGrid     = document.getElementById('photo-grid');
+    const photoSelectBtn = document.getElementById('photo-select-btn');
+
+    let uploadedPhotos = []; // { url, file }
+
+    function renderGrid() {
+      photoGrid.innerHTML = '';
+
+      uploadedPhotos.forEach((photo, index) => {
+        const thumb = document.createElement('div');
+        thumb.className = 'cs-photo-thumb';
+
+        const img = document.createElement('img');
+        img.src = photo.url;
+        img.alt = photo.file.name;
+
+        const removeBtn = document.createElement('button');
+        removeBtn.className = 'cs-photo-thumb__remove';
+        removeBtn.title = 'Удалить';
+        removeBtn.innerHTML = `<svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1L11 11M11 1L1 11" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>`;
+        removeBtn.addEventListener('click', () => {
+          URL.revokeObjectURL(photo.url);
+          uploadedPhotos.splice(index, 1);
+          renderGrid();
+        });
+
+        thumb.appendChild(img);
+        thumb.appendChild(removeBtn);
+        photoGrid.appendChild(thumb);
+      });
+
+      // Кнопка «добавить ещё»
+      const addBtn = document.createElement('button');
+      addBtn.className = 'cs-photo-add';
+      addBtn.title = 'Добавить фото';
+      addBtn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 4V20M4 12H20" stroke="#9c9ba2" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>`;
+      addBtn.addEventListener('click', () => photoInput.click());
+      photoGrid.appendChild(addBtn);
+
+      // Переключение видимости dropzone / grid
+      if (uploadedPhotos.length > 0) {
+        photoDropzone.style.display = 'none';
+        photoGrid.style.display = 'flex';
+      } else {
+        photoDropzone.style.display = 'flex';
+        photoGrid.style.display = 'none';
+      }
+    }
+
+    function handleFiles(files) {
+      Array.from(files).forEach(file => {
+        if (!file.type.match(/image\/(jpeg|png)/)) return;
+        const url = URL.createObjectURL(file);
+        uploadedPhotos.push({ url, file });
+      });
+      renderGrid();
+    }
+
+    // Кнопка «Выбрать файлы»
+    photoSelectBtn.addEventListener('click', () => photoInput.click());
+
+    // Выбор через диалог
+    photoInput.addEventListener('change', (e) => {
+      handleFiles(e.target.files);
+      photoInput.value = '';
+    });
+
+    // Drag & drop
+    photoDropzone.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      photoDropzone.style.borderColor = '#0d0d0f';
+      photoDropzone.style.background = '#f5f5f5';
+    });
+
+    photoDropzone.addEventListener('dragleave', () => {
+      photoDropzone.style.borderColor = '';
+      photoDropzone.style.background = '';
+    });
+
+    photoDropzone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      photoDropzone.style.borderColor = '';
+      photoDropzone.style.background = '';
+      handleFiles(e.dataTransfer.files);
+    });
+
+    // ─── Exceptions Drawer ────────────────────────────────────
+    (function() {
+      const overlay    = document.getElementById('exceptions-overlay');
+      const drawer     = document.getElementById('exceptions-drawer');
+      const openBtn    = document.getElementById('exceptions-btn');
+      const applyBtn   = document.getElementById('drawer-apply-btn');
+      const footer     = document.getElementById('drawer-footer');
+      const yearLabel  = document.getElementById('drawer-year-label');
+      const yearBtn    = document.getElementById('drawer-year-btn');
+      const calEl      = document.getElementById('drawer-calendar');
+
+      const MONTH_NAMES_GEN = ['января','февраля','марта','апреля','мая','июня',
+                               'июля','августа','сентября','октября','ноября','декабря'];
+
+      function formatRange() {
+        const rangeLabel = document.getElementById('drawer-range-label');
+        if (!rangeStart) { rangeLabel.textContent = ''; return; }
+        const lo = rangeEnd && rangeEnd < rangeStart ? rangeEnd : rangeStart;
+        const hi = rangeEnd && rangeEnd < rangeStart ? rangeStart : rangeEnd;
+        if (!hi) {
+          rangeLabel.textContent = `${lo.getDate()} ${MONTH_NAMES_GEN[lo.getMonth()]}`;
+        } else if (lo.getMonth() === hi.getMonth()) {
+          rangeLabel.textContent = `${lo.getDate()} \u2013 ${hi.getDate()} ${MONTH_NAMES_GEN[lo.getMonth()]}`;
+        } else {
+          rangeLabel.textContent = `${lo.getDate()} ${MONTH_NAMES_GEN[lo.getMonth()]} \u2013 ${hi.getDate()} ${MONTH_NAMES_GEN[hi.getMonth()]}`;
+        }
+      }
+
+      function updateFooter() {
+        footer.style.display = (rangeStart !== null) ? 'flex' : 'none';
+        formatRange();
+      }
+
+      const MONTH_NAMES = ['Январь','Февраль','Март','Апрель','Май','Июнь',
+                           'Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'];
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+
+      let currentYear = today.getFullYear();
+      // Диапазон: rangeStart — первый клик, rangeEnd — второй клик
+      let rangeStart = null; // Date
+      let rangeEnd   = null; // Date
+
+      function dateKey(date) {
+        return `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;
+      }
+
+      function isBetween(date, a, b) {
+        const lo = a < b ? a : b;
+        const hi = a < b ? b : a;
+        return date >= lo && date <= hi;
+      }
+
+      function applyRangeClasses() {
+        const days = calEl.querySelectorAll('.ex-drawer-day[data-date]');
+        days.forEach(el => {
+          const d = new Date(el.dataset.date + 'T00:00:00');
+          el.classList.remove('ex-drawer-day--selected',
+                              'ex-drawer-day--range-start',
+                              'ex-drawer-day--range-end',
+                              'ex-drawer-day--in-range',
+                              'ex-drawer-day--hover-range');
+
+          if (!rangeStart) return;
+
+          if (rangeEnd) {
+            const lo = rangeStart < rangeEnd ? rangeStart : rangeEnd;
+            const hi = rangeStart < rangeEnd ? rangeEnd   : rangeStart;
+            if (dateKey(d) === dateKey(lo)) el.classList.add('ex-drawer-day--range-start');
+            else if (dateKey(d) === dateKey(hi)) el.classList.add('ex-drawer-day--range-end');
+            else if (d > lo && d < hi) el.classList.add('ex-drawer-day--in-range');
+          } else {
+            if (dateKey(d) === dateKey(rangeStart)) el.classList.add('ex-drawer-day--selected');
+          }
+        });
+      }
+
+      function buildMonth(m) {
+        const firstDay = new Date(currentYear, m, 1);
+        const daysInMonth = new Date(currentYear, m + 1, 0).getDate();
+        let startDow = firstDay.getDay();
+        startDow = startDow === 0 ? 6 : startDow - 1;
+
+        const monthEl = document.createElement('div');
+        monthEl.className = 'ex-drawer-month';
+
+        const nameEl = document.createElement('div');
+        nameEl.className = 'ex-drawer-month__name';
+        nameEl.textContent = MONTH_NAMES[m];
+        monthEl.appendChild(nameEl);
+
+        const gridEl = document.createElement('div');
+        gridEl.className = 'ex-drawer-month__grid';
+
+        for (let i = 0; i < startDow; i++) {
+          const empty = document.createElement('div');
+          empty.className = 'ex-drawer-day ex-drawer-day--empty';
+          gridEl.appendChild(empty);
+        }
+
+        for (let d = 1; d <= daysInMonth; d++) {
+          const cellDate = new Date(currentYear, m, d);
+          const dayEl = document.createElement('div');
+          dayEl.className = 'ex-drawer-day';
+          dayEl.textContent = d;
+          dayEl.dataset.date = dateKey(cellDate);
+
+          if (cellDate < today) {
+            dayEl.classList.add('ex-drawer-day--past');
+          } else {
+            dayEl.addEventListener('mouseenter', () => {
+              if (!rangeStart || rangeEnd) return;
+              // hover-preview диапазона
+              const days = calEl.querySelectorAll('.ex-drawer-day[data-date]');
+              days.forEach(el => {
+                el.classList.remove('ex-drawer-day--hover-range');
+                const hd = new Date(el.dataset.date + 'T00:00:00');
+                if (isBetween(hd, rangeStart, cellDate) &&
+                    dateKey(hd) !== dateKey(rangeStart) &&
+                    dateKey(hd) !== dateKey(cellDate)) {
+                  el.classList.add('ex-drawer-day--hover-range');
+                }
+              });
+            });
+
+            dayEl.addEventListener('click', () => {
+              if (!rangeStart || rangeEnd) {
+                // Первый клик — сброс и новый старт
+                rangeStart = cellDate;
+                rangeEnd   = null;
+              } else {
+                // Второй клик — завершаем диапазон
+                if (cellDate.getTime() === rangeStart.getTime()) {
+                  // Клик по той же дате — сброс
+                  rangeStart = null;
+                  rangeEnd   = null;
+                } else {
+                  rangeEnd = cellDate;
+                }
+              }
+              // Убираем hover-классы
+              calEl.querySelectorAll('.ex-drawer-day--hover-range')
+                   .forEach(el => el.classList.remove('ex-drawer-day--hover-range'));
+              applyRangeClasses();
+              updateFooter();
+            });
+          }
+
+          gridEl.appendChild(dayEl);
+        }
+
+        monthEl.appendChild(gridEl);
+        return monthEl;
+      }
+
+      function buildCalendar() {
+        calEl.innerHTML = '';
+        for (let row = 0; row < 4; row++) {
+          const decadeEl = document.createElement('div');
+          decadeEl.className = 'ex-drawer-decade';
+          for (let col = 0; col < 3; col++) {
+            decadeEl.appendChild(buildMonth(row * 3 + col));
+          }
+          calEl.appendChild(decadeEl);
+        }
+        applyRangeClasses();
+      }
+
+      function pad(n) { return String(n).padStart(2, '0'); }
+
+      // Чипс, который сейчас редактируется (null = новый)
+      let editingChip = null;
+
+      function chipLabel(lo, hi) {
+        const loStr = `${pad(lo.getDate())}.${pad(lo.getMonth()+1)}`;
+        const hiStr = hi ? `${pad(hi.getDate())}.${pad(hi.getMonth()+1)}` : null;
+        return hiStr && hiStr !== loStr ? `${loStr} — ${hiStr}` : loStr;
+      }
+
+      function openDrawer(chipEl) {
+        editingChip = chipEl || null;
+
+        if (chipEl) {
+          // Восстанавливаем диапазон из данных чипса
+          rangeStart = new Date(chipEl.dataset.lo + 'T00:00:00');
+          rangeEnd   = chipEl.dataset.hi ? new Date(chipEl.dataset.hi + 'T00:00:00') : null;
+          // Переключаем год на год начала диапазона
+          currentYear = rangeStart.getFullYear();
+          yearLabel.textContent = currentYear;
+        } else {
+          // Новый диапазон — сброс
+          rangeStart = null;
+          rangeEnd   = null;
+        }
+
+        buildCalendar();
+        updateFooter();
+        overlay.classList.add('ex-drawer-overlay--open');
+        drawer.classList.add('ex-drawer--open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeDrawer() {
+        overlay.classList.remove('ex-drawer-overlay--open');
+        drawer.classList.remove('ex-drawer--open');
+        document.body.style.overflow = '';
+        editingChip = null;
+      }
+
+      function makeChip(lo, hi) {
+        const chipsEl = document.getElementById('exceptions-chips');
+        const label = chipLabel(lo, hi);
+
+        const chip = document.createElement('div');
+        chip.className = 'cs-exceptions-chip';
+        chip.textContent = label;
+        chip.dataset.lo = dateKey(lo);
+        if (hi) chip.dataset.hi = dateKey(hi);
+
+        chip.addEventListener('click', () => openDrawer(chip));
+        return chip;
+      }
+
+      function renderChips() {
+        const chipsEl = document.getElementById('exceptions-chips');
+        if (!rangeStart) return;
+
+        const lo = rangeEnd && rangeEnd < rangeStart ? rangeEnd : rangeStart;
+        const hi = rangeEnd && rangeEnd < rangeStart ? rangeStart : (rangeEnd || null);
+
+        if (editingChip) {
+          // Обновляем существующий чипс
+          editingChip.textContent = chipLabel(lo, hi);
+          editingChip.dataset.lo = dateKey(lo);
+          if (hi) editingChip.dataset.hi = dateKey(hi);
+          else delete editingChip.dataset.hi;
+        } else {
+          // Добавляем новый чипс (без дублей)
+          const label = chipLabel(lo, hi);
+          const existing = Array.from(chipsEl.querySelectorAll('.cs-exceptions-chip'));
+          if (!existing.some(c => c.textContent === label)) {
+            chipsEl.appendChild(makeChip(lo, hi));
+          }
+        }
+
+        chipsEl.style.display = 'flex';
+      }
+
+      window.__openExceptionsDrawer = openDrawer;
+      openBtn.addEventListener('click', () => openDrawer(null));
+      overlay.addEventListener('click', closeDrawer);
+      applyBtn.addEventListener('click', () => {
+        renderChips();
+        closeDrawer();
+      });
+
+      // Year prev/next (клик по кнопке — переключение года)
+      yearBtn.addEventListener('click', () => {
+        // простое переключение: следующий год → предыдущий → текущий
+        if (currentYear === today.getFullYear()) {
+          currentYear++;
+        } else if (currentYear > today.getFullYear()) {
+          currentYear++;
+          if (currentYear > today.getFullYear() + 2) currentYear = today.getFullYear();
+        }
+        yearLabel.textContent = currentYear;
+        buildCalendar();
+      });
+    })();
+  </script>
+</body>
+</html>

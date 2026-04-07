@@ -509,10 +509,12 @@
   </div>
 
   <div class="cs-dropdown" id="pricing-type-dropdown" style="display:none; position:fixed; z-index:9999;">
-    <div class="cs-dropdown__item" data-value="per-guest">За гостя</div>
-    <div class="cs-dropdown__item" data-value="per-guest-night">За гостя в сутки</div>
-    <div class="cs-dropdown__item" data-value="per-room">За номер</div>
-    <div class="cs-dropdown__item" data-value="per-room-night">За номер в сутки</div>
+    <div class="cs-dropdown__item" data-value="per-guest" data-group="default">За гостя</div>
+    <div class="cs-dropdown__item" data-value="per-guest-night" data-group="default">За гостя в сутки</div>
+    <div class="cs-dropdown__item" data-value="per-room" data-group="default">За номер</div>
+    <div class="cs-dropdown__item" data-value="per-room-night" data-group="default">За номер в сутки</div>
+    <div class="cs-dropdown__item" data-value="per-pet" data-group="pets">За питомца за весь срок</div>
+    <div class="cs-dropdown__item" data-value="per-pet-night" data-group="pets">За питомца в сутки</div>
   </div>
 
   <div class="cs-dropdown" id="service-type-dropdown" style="display:none; position:fixed; z-index:9999;">
@@ -893,6 +895,20 @@
         } else if (item.dataset.value === 'room-extras') {
           extrasField.style.display = 'flex';
         }
+
+        // Фильтрация пунктов ценообразования
+        const isPets = item.dataset.value === 'pets';
+        document.querySelectorAll('#pricing-type-dropdown .cs-dropdown__item').forEach(pi => {
+          pi.style.display = (isPets ? pi.dataset.group === 'pets' : pi.dataset.group === 'default') ? '' : 'none';
+        });
+
+        // Сбрасываем выбранное значение ценообразования при смене типа
+        const pricingLabel = document.getElementById('pricing-type-label');
+        pricingLabel.textContent = 'Выберите тип расчёта';
+        pricingLabel.dataset.value = '';
+        pricingLabel.classList.remove('cs-select__value');
+        pricingLabel.classList.add('cs-select__placeholder');
+        document.querySelectorAll('#pricing-type-dropdown .cs-dropdown__item').forEach(i => i.classList.remove('cs-dropdown__item--selected'));
 
         closeDropdown();
       });

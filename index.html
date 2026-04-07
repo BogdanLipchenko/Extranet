@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Extranet — Главная</title>
+  <link rel="stylesheet" href="/Base2.0/tokens/tokens.css">
+  <link rel="stylesheet" href="/Base2.0/styles/fonts.css">
+  <link rel="stylesheet" href="/Extranet/styles.css">
+  <style>
+    /* BookingDrawer */
+    .bd-overlay {
+      position: fixed; inset: 0;
+      background: rgba(13,13,15,.48);
+      z-index: 200; opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s ease;
+    }
+    .bd-overlay--visible { opacity: 1; pointer-events: auto; }
+
+    .bd-drawer {
+      position: fixed; top: 0; right: 0; bottom: 0;
+      width: 720px;
+      background: #fff;
+      border-radius: 32px 0 0 32px;
+      box-shadow: 0 4px 24px rgba(13,35,67,.18);
+      z-index: 201;
+      overflow-y: auto;
+      transform: translateX(100%);
+      transition: transform .35s cubic-bezier(.4,0,.2,1);
+    }
+    .bd-drawer--open { transform: translateX(0); }
+
+    .bd-close-wrap {
+      position: fixed; top: 0; right: 720px; bottom: 0;
+      width: 80px; z-index: 202;
+      display: flex; align-items: flex-start;
+      justify-content: flex-end;
+      padding-top: 40px; padding-right: 12px;
+      opacity: 0; pointer-events: none;
+      transition: opacity .3s ease;
+    }
+    .bd-close-wrap--visible { opacity: 1; pointer-events: auto; }
+
+    .bd-close-btn {
+      display: flex; align-items: center; justify-content: center;
+      width: 56px; height: 56px;
+      background: #fff; border: none; border-radius: 20px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(13,13,15,.12);
+    }
+    .bd-close-btn:hover { background: #f5f5f5; }
+    .bd-close-btn svg { width: 24px; height: 24px; }
+
+    .up-table__row--active .up-td { background: #f0f4ff !important; }
+  </style>
+</head>
+<body>
+  <div class="extranet-layout">
+
+    <!-- ─── Header ─────────────────────────────────────────────── -->
+    <header class="ex-header">
+      <div class="ex-header__left">
+        <!-- Logo -->
+        <a href="/Extranet/index.html" class="ex-logo">
+          <img src="/Base2.0/assets/LogoWrapper.svg" alt="Яндекс Путешествия">
+        </a>
+
+          <!-- Hotel selector -->
+        <div class="ex-hotel-selector">
+          <span class="ex-hotel-selector__name">Cosmos Sochi Hotel Spa &amp; Resort</span>
+          <div class="ex-hotel-selector__stars">
+            <img src="/Extranet/assets/878c8e678a9e6ac3c66f79e14227854a33bf4ea5.svg" alt="★" width="16" height="16">
+            <img src="/Extranet/assets/878c8e678a9e6ac3c66f79e14227854a33bf4ea5.svg" alt="★" width="16" height="16">
+            <img src="/Extranet/assets/878c8e678a9e6ac3c66f79e14227854a33bf4ea5.svg" alt="★" width="16" height="16">
+          </div>
+          <div class="ex-hotel-selector__divider"></div>
+          <span class="ex-hotel-selector__meta">Гостиница&nbsp; •&nbsp; ID 49531951</span>
+          <span class="ex-hotel-selector__status">Размещается</span>
+          <div class="ex-hotel-selector__divider"></div>
+          <img src="/Extranet/assets/5fa4c68451031fbb33538a898504e75abbfcc20d.svg" alt="" class="ex-hotel-selector__arrow" style="transform: rotate(-90deg); width:16px; height:16px;">
+        </div>
+      </div>
+
+      <div class="ex-header__right">
+        <!-- Help button -->
+        <button class="ex-btn-help">
+          Помощь
+          <img src="/Extranet/assets/0f16f7d2ba0b8eec5236bf3397557b2d69c03000.svg" alt="" width="16" height="16">
+        </button>
+        <!-- User avatar -->
+        <div class="ex-avatar">
+          <img src="/Extranet/assets/38314a65e2a3d14ef6ff5023304bc46c69811c4c.png" alt="User">
+        </div>
+      </div>
+    </header>
+
+    <!-- ─── Body ──────────────────────────────────────────────── -->
+    <div class="ex-body">
+
+      <!-- ─── Sidebar ─────────────────────────────────── -->
+      <aside class="ex-sidebar">
+        <nav class="ex-sidebar__menu">
+          <!-- Group 1 -->
+          <ul class="ex-sidebar__list">
+            <a href="/Extranet/index.html" class="ex-snippet ex-snippet--active" style="text-decoration:none;">
+              <span class="ex-snippet__icon">
+                <img src="/Extranet/assets/3bc786262dec2fc94cab417e7cd8f754dcd001c2.svg" alt="" width="20" height="20">
+              </span>
+              <span class="ex-snippet__label">Главная</span>
+            </a>
+            <li class="ex-snippet">
+              <span class="ex-snippet__icon">
+                <img src="/Extranet/assets/8adeb14e650b099aae78d50547aa18e193871963.svg" alt="" width="20" height="20">
+              </span>
+              <span class="ex-snippet__label">Категории номеров</span>
+            </li>
+            <li class="ex-snippet">
+              <span class="ex-snippet__icon">
+                <img src="/Extranet/assets/b1fe04d7e178c84eb0062a43494cdf97f6b9081f.svg" alt="" width="20" height="20">
+              </span>
+              <span class="ex-snippet__label">Тарифы</span>
+            </li>
+            <li class="ex-snippet">
+              <span class="ex-snippet__icon">
+                <img src="/Extranet/assets/6718807c76904b2168981ed37b9888bfc2d5cfc1.svg" alt="" width="20" height="20">
+              </span>
+              <span class="ex-snippet__label">Доступность и цены</span>
+            </li>
+            <li class="ex-snippet">
+              <span class="ex-snippet__icon">
+                <img src="/Extranet/assets/b1fe04d7e178c84eb0062a43494cdf97f6b9081f.svg" alt="" width="20" height="20">
+              </span>
+              <span class="ex-snippet__label">Аналитика</span>
+            </li>
+            <li class="ex-snippet ex-snippet--has-submenu" id="snippet-object" onclick="toggleSubmenu()">
+              <span class="ex-snippet__icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.42285 17.7715C8.41405 17.7643 8.40518 17.7573 8.39648 17.75C8.40518 17.7573 8.41406 17.7643 8.42285 17.7715ZM13.7705 8.06445C13.5018 7.89823 13.1622 7.89813 12.8936 8.06445L9.56055 10.1279C9.31526 10.2798 9.16613 10.5475 9.16602 10.8359V15.833C9.16628 16.293 9.53895 16.666 9.99902 16.666H16.666C17.1259 16.6658 17.4988 16.2929 17.499 15.833V10.8359C17.4989 10.5476 17.3497 10.2798 17.1045 10.1279L13.7705 8.06445ZM3.83203 3.66699C3.2799 3.66717 2.83203 4.11482 2.83203 4.66699V15.334C2.83238 15.8859 3.28011 16.3338 3.83203 16.334H7.5498C7.51684 16.1721 7.49906 16.0046 7.49902 15.833V10.8359C7.49914 9.97028 7.94754 9.16659 8.68359 8.71094L10.499 7.58691V4.66699C10.499 4.11482 10.0512 3.66717 9.49902 3.66699H3.83203ZM12.499 18.334H3.83203L3.67773 18.3301C2.14404 18.2522 0.913958 17.0219 0.835938 15.4883L0.832031 15.334V4.66699C0.832031 3.01025 2.17533 1.66717 3.83203 1.66699H9.49902L9.65332 1.6709C11.2383 1.75137 12.499 3.062 12.499 4.66699V6.41504C12.4961 6.41607 12.4931 6.41693 12.4902 6.41797C13.1978 6.16488 13.9936 6.24209 14.6484 6.64746L17.9814 8.71094C18.7175 9.1666 19.1659 9.97029 19.166 10.8359V15.833C19.1658 17.2134 18.0464 18.3328 16.666 18.333H12.499V18.334ZM8.23926 17.6084C8.28934 17.6581 8.34236 17.7047 8.39648 17.75C8.34234 17.7047 8.28937 17.6581 8.23926 17.6084Z" fill="#0D0D0F"/><rect x="4.16602" y="5" width="1.66667" height="1.66667" fill="#0D0D0F"/><rect x="4.16602" y="8.33334" width="1.66667" height="1.66667" fill="#0D0D0F"/><rect x="4.16602" y="11.6667" width="1.66667" height="1.66667" fill="#0D0D0F"/><rect x="7.5" y="5" width="1.66667" height="1.66667" fill="#0D0D0F"/><rect x="10.832" y="10.8333" width="1.66667" height="1.66667" fill="#0D0D0F"/><rect x="14.166" y="10.8333" width="1.66667" height="1.66667" fill="#0D0D0F"/><rect x="12.5" y="14.1667" width="1.66667" height="2.5" fill="#0D0D0F"/></svg>
+              </span>
+              <span class="ex-snippet__label">Объект</span>
+              <span class="ex-snippet__lamp">
+                <img src="/Extranet/assets/014f2e8cb513fc61d56c389a19389c9f83a7fdf3.svg" alt="" width="16" height="16">
+              </span>
+
+            </li>
+            <li class="ex-snippet">
+              <span class="ex-snippet__icon">
+                <img src="/Extranet/assets/d44fcc869a4752109bb274d0ad32b79adb279e1d.svg" alt="" width="20" height="20">
+              </span>
+              <span class="ex-snippet__label">Продвижение</span>
+            </li>
+          </ul>
+
+          <div class="ex-sidebar__divider"></div>
+
+          <!-- Group 2 -->
+          <ul class="ex-sidebar__list">
+            <a href="/Extranet/bookings.html" class="ex-snippet" style="text-decoration:none;">
+              <span class="ex-snippet__icon">
+                <img src="/Extranet/assets/8c0527ee1c6aa7f0f9e68ebe4af1b64ba7e3fd60.svg" alt="" width="20" height="20">
+              </span>
+              <span class="ex-snippet__label">Бронирования</span>
+            </a>
+            <li class="ex-snippet">
+              <span class="ex-snippet__icon">
+                <img src="/Extranet/assets/b2b597a38cd6603580eace27315e018a40abfd3b.svg" alt="" width="20" height="20">
+              </span>
+              <span class="ex-snippet__label">Платежи</span>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Collapse button -->
+        <button class="ex-snippet ex-snippet--collapse">
+          <span class="ex-snippet__icon">
+            <img src="/Extranet/assets/5fa4c68451031fbb33538a898504e75abbfcc20d.svg" alt="" width="16" height="16">
+          </span>
+          <span class="ex-snippet__label">Свернуть</span>
+        </button>
+      </aside>
+
+      <!-- ─── Submenu: Объект ─────────────────────────── -->
+      <div class="ex-submenu" id="submenu-object">
+        <ul class="ex-submenu__list">
+          <li class="ex-submenu__item">Правила проживания</li>
+          <li class="ex-submenu__item">Договор и отчеты</li>
+          <li class="ex-submenu__item">
+            <a href="/Extranet/amenities.html" class="ex-submenu__link">Удобства в номерах</a>
+          </li>
+          <li class="ex-submenu__item">
+            <a href="/Extranet/amenities.html" class="ex-submenu__link">Удобства объекта</a>
+          </li>
+          <li class="ex-submenu__item ex-submenu__item--with-badge">
+            <a href="/Extranet/paid-services.html" class="ex-submenu__link">Платные услуги</a>
+            <span class="ex-submenu__badge">Новое</span>
+          </li>
+          <li class="ex-submenu__item">История изменений</li>
+          <li class="ex-submenu__item">Менеджер каналов</li>
+          <li class="ex-submenu__item">Адрес объекта</li>
+        </ul>
+      </div>
+
+      <!-- ─── Main content ────────────────────────────── -->
+      <main class="ex-main">
+
+        <!-- Chat Banner -->
+        <div class="ex-chat-banner">
+          <!-- Wave background rendered via CSS gradient + pseudo-elements -->
+          <div class="ex-chat-banner__bg"></div>
+
+          <div class="ex-chat-banner__content">
+            <div class="ex-chat-banner__text">
+              <h2 class="ex-chat-banner__title">Больше ответов – меньше отмен</h2>
+              <p class="ex-chat-banner__sub">Гости, получающие ответы в чате, на 21% реже отменяют бронирование. Отсутствие ответа снижает доверие у 54% гостей</p>
+            </div>
+          </div>
+
+          <!-- Chat preview bubble -->
+          <div class="ex-chat-bubble">
+            <div class="ex-chat-bubble__blob"></div>
+            <div class="ex-chat-bubble__inner">
+              <div class="ex-chat-bubble__avatar">
+                <img src="/Extranet/assets/b961cb2f4d5815f1dd755bee6ae89beb5fd4b330.png" alt="Avatar">
+                <span class="ex-chat-bubble__online"></span>
+              </div>
+              <div class="ex-chat-bubble__message">
+                <div class="ex-chat-bubble__row">
+                  <span class="ex-chat-bubble__author">Алексей Иванов</span>
+                  <span class="ex-chat-bubble__time">Сегодня</span>
+                </div>
+                <p class="ex-chat-bubble__text">Добрый день! Возможно ли заехать...</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA button -->
+          <button class="ex-btn-chats">К чатам</button>
+        </div>
+
+        <!-- Upcoming stays block -->
+        <div class="ex-upcoming">
+          <div class="ex-upcoming__card">
+            <h2 class="ex-upcoming__title">Ближайшие заезды</h2>
+
+            <!-- Table -->
+            <div class="up-table-wrap">
+              <table class="up-table">
+                <thead>
+                  <tr class="up-table__head-row">
+                    <th class="up-th up-col--guest">Имя гостя</th>
+                    <th class="up-th up-col--object">Объект</th>
+                    <th class="up-th up-col--date">Заезд</th>
+                    <th class="up-th up-col--date">Выезд</th>
+                    <th class="up-th up-col--paid">Оплатил гость</th>
+                    <th class="up-th up-col--yandex">№ Яндекс</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="up-table__row">
+                    <td class="up-td up-col--guest">Зайцев Арсений</td>
+                    <td class="up-td up-col--object">Апартаменты Ромашка</td>
+                    <td class="up-td up-col--date">2021-03-01</td>
+                    <td class="up-td up-col--date">2021-03-07</td>
+                    <td class="up-td up-col--paid">20 514.50 ₽</td>
+                    <td class="up-td up-col--yandex">YA-0777-550-5773</td>
+                  </tr>
+                  <tr class="up-table__row">
+                    <td class="up-td up-col--guest">Морозов Филипп</td>
+                    <td class="up-td up-col--object">Апартаменты Ромашка</td>
+                    <td class="up-td up-col--date">2021-03-01</td>
+                    <td class="up-td up-col--date">2021-03-07</td>
+                    <td class="up-td up-col--paid">20 514.50 ₽</td>
+                    <td class="up-td up-col--yandex">YA-0777-550-5773</td>
+                  </tr>
+                  <tr class="up-table__row">
+                    <td class="up-td up-col--guest">Зайцев Арсений</td>
+                    <td class="up-td up-col--object">Апартаменты Ромашка</td>
+                    <td class="up-td up-col--date">2021-03-01</td>
+                    <td class="up-td up-col--date">2021-03-07</td>
+                    <td class="up-td up-col--paid">20 514.50 ₽</td>
+                    <td class="up-td up-col--yandex">YA-0777-550-5773</td>
+                  </tr>
+                  <tr class="up-table__row">
+                    <td class="up-td up-col--guest">Масленникова Сафия</td>
+                    <td class="up-td up-col--object">Апартаменты Ромашка</td>
+                    <td class="up-td up-col--date">2021-03-01</td>
+                    <td class="up-td up-col--date">2021-03-07</td>
+                    <td class="up-td up-col--paid">20 514.50 ₽</td>
+                    <td class="up-td up-col--yandex">YA-0777-550-5773</td>
+                  </tr>
+                  <tr class="up-table__row">
+                    <td class="up-td up-col--guest">Зайцев Арсений</td>
+                    <td class="up-td up-col--object">Апартаменты Ромашка</td>
+                    <td class="up-td up-col--date">2021-03-01</td>
+                    <td class="up-td up-col--date">2021-03-07</td>
+                    <td class="up-td up-col--paid">20 514.50 ₽</td>
+                    <td class="up-td up-col--yandex">YA-0777-550-5773</td>
+                  </tr>
+                  <tr class="up-table__row">
+                    <td class="up-td up-col--guest">Зайцев Арсений</td>
+                    <td class="up-td up-col--object">Апартаменты Ромашка</td>
+                    <td class="up-td up-col--date">2021-03-01</td>
+                    <td class="up-td up-col--date">2021-03-07</td>
+                    <td class="up-td up-col--paid">20 514.50 ₽</td>
+                    <td class="up-td up-col--yandex">YA-0777-550-5773</td>
+                  </tr>
+
+                  <tr class="up-table__row">
+                    <td class="up-td up-col--guest">Морозов Филипп</td>
+                    <td class="up-td up-col--object">Апартаменты Ромашка</td>
+                    <td class="up-td up-col--date">2021-03-01</td>
+                    <td class="up-td up-col--date">2021-03-07</td>
+                    <td class="up-td up-col--paid">20 514.50 ₽</td>
+                    <td class="up-td up-col--yandex">YA-0777-550-5773</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+  <!-- ═══════════════ BookingDrawer ═══════════════════════════ -->
+
+  <!-- Overlay -->
+  <div class="bd-overlay" id="bd-overlay"></div>
+
+  <!-- Close button -->
+  <div class="bd-close-wrap" id="bd-close-wrap">
+    <button class="bd-close-btn" id="bd-close-btn" aria-label="Закрыть">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 6L6 18M6 6l12 12" stroke="#0d0d0f" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Drawer panel -->
+  <div class="bd-drawer" id="bd-drawer" role="dialog" aria-modal="true" aria-label="Детали бронирования">
+    <div class="bd-inner">
+
+      <!-- ── Заголовок ─────────────────────────────────────────── -->
+      <div class="bd-header">
+        <h2 class="bd-guest-name">Морозов Филипп</h2>
+        <button class="bd-chat-btn">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-4.5l-3.5 2.5V15H5a2 2 0 01-2-2V5z" stroke="#0d0d0f" stroke-width="1.4" stroke-linejoin="round"/>
+          </svg>
+          В чат с гостем
+        </button>
+      </div>
+
+      <!-- ── Основная информация ────────────────────────────────── -->
+      <div class="bd-section">
+        <p class="bd-section__title">Основная информация</p>
+        <div class="bd-fields">
+
+          <div class="bd-row">
+            <div class="bd-item">
+              <span class="bd-item__label">№ Яндекс</span>
+              <span class="bd-item__value">YA-0777-550-5773</span>
+            </div>
+            <div class="bd-item">
+              <span class="bd-item__label">Статус брони</span>
+              <span class="bd-item__value bd-item__value--success">Подтверждена</span>
+            </div>
+            <div class="bd-item bd-item--168">
+              <span class="bd-item__label">Получено</span>
+              <span class="bd-item__value">14.02.2025, четверг</span>
+              <span class="bd-item__value">12:32 (местное время)</span>
+            </div>
+          </div>
+
+          <div class="bd-divider"></div>
+
+          <div class="bd-row">
+            <div class="bd-item">
+              <span class="bd-item__label">Основной гость</span>
+              <span class="bd-item__value">Морозов Филипп</span>
+            </div>
+            <div class="bd-item">
+              <span class="bd-item__label">Количество гостей</span>
+              <span class="bd-item__value">Взрослые: 1<br>Дети: 3 (возраст: 1,7 и 4)</span>
+            </div>
+            <div class="bd-item bd-item--168">
+              <span class="bd-item__label">Количество номеров</span>
+              <span class="bd-item__value">1</span>
+            </div>
+          </div>
+
+          <div class="bd-divider"></div>
+
+          <div class="bd-row">
+            <div class="bd-item">
+              <span class="bd-item__label">Заезд</span>
+              <span class="bd-item__value">14.02.2025, пятница</span>
+              <span class="bd-item__value">С 08:00 (местное время)</span>
+            </div>
+            <div class="bd-item">
+              <span class="bd-item__label">Выезд</span>
+              <span class="bd-item__value">28.02.2025, пятница</span>
+              <span class="bd-item__value">До 16:00 (местное время)</span>
+            </div>
+            <div class="bd-item bd-item--168">
+              <span class="bd-item__label">Количество ночей</span>
+              <span class="bd-item__value">14</span>
+            </div>
+          </div>
+
+          <div class="bd-row">
+            <div class="bd-item">
+              <div class="bd-check-row">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2.667 8.333l3.333 3.334 7.333-7.334" stroke="#02ad0d" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Ранний заезд</span>
+              </div>
+            </div>
+            <div class="bd-item">
+              <div class="bd-check-row">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2.667 8.333l3.333 3.334 7.333-7.334" stroke="#02ad0d" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Поздний выезд</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── Контакты гостя ─────────────────────────────────────── -->
+      <div class="bd-section">
+        <p class="bd-section__title">Контакты гостя</p>
+        <div class="bd-row">
+          <div class="bd-item">
+            <span class="bd-item__label">ФИО</span>
+            <span class="bd-item__value">Морозов Филипп</span>
+          </div>
+          <div class="bd-item">
+            <span class="bd-item__label">Телефон</span>
+            <span class="bd-item__value">+79000854123</span>
+          </div>
+          <div class="bd-item bd-item--168">
+            <span class="bd-item__label">Почта</span>
+            <span class="bd-item__value" style="word-break:break-all;white-space:normal;">yndx-test-chesnokov-as-0sejsv@yandex.ru</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Размещение ─────────────────────────────────────────── -->
+      <div class="bd-section">
+        <p class="bd-section__title">Размещение</p>
+        <div class="bd-room">
+          <img class="bd-room__img"
+               src="http://localhost:3845/assets/5146429db42e4f3c4278036dc21b840daea99742.png"
+               alt="Номер"
+               onerror="this.style.background='#e6e5e7';this.removeAttribute('src')">
+          <div class="bd-room__info">
+            <span class="bd-room__name">Номер 1. Стандарт</span>
+            <span class="bd-room__type">Двухместный номер</span>
+          </div>
+        </div>
+        <div class="bd-divider"></div>
+        <div class="bd-guest-row">
+          <span class="bd-guest-row__role">Гость 1. Взрослый · Основное место</span>
+          <span class="bd-guest-row__name">Konstantin Konstantinopolsky</span>
+        </div>
+        <div class="bd-guest-row">
+          <span class="bd-guest-row__role">Гость 2. Взрослый · Основное место</span>
+          <span class="bd-guest-row__name">Konstantin Konstantinopolsky</span>
+        </div>
+        <div class="bd-guest-row">
+          <span class="bd-guest-row__role">Гость 3. Ребёнок · Дополнительное место</span>
+          <span class="bd-guest-row__name">Konstantin Konstantinopolsky</span>
+        </div>
+      </div>
+
+      <!-- ── Платные услуги ─────────────────────────────────────── -->
+      <div class="bd-section">
+        <p class="bd-section__title">Платные услуги</p>
+        <div class="bd-fields">
+          <div class="bd-row">
+            <div class="bd-item"><span class="bd-item__label">Услуга</span><span class="bd-item__value">Проживание с животными</span></div>
+            <div class="bd-item"><span class="bd-item__label">Расчёт стоимости</span><span class="bd-item__value">За гостя</span></div>
+            <div class="bd-item bd-item--flex"><span class="bd-item__label">Количество</span><span class="bd-item__value">1</span></div>
+          </div>
+          <div class="bd-divider"></div>
+          <div class="bd-row">
+            <div class="bd-item"><span class="bd-item__label">Услуга</span><span class="bd-item__value">Парковка</span></div>
+            <div class="bd-item"><span class="bd-item__label">Расчёт стоимости</span><span class="bd-item__value">За гостя в сутки</span></div>
+            <div class="bd-item bd-item--flex"><span class="bd-item__label">Количество</span><span class="bd-item__value">4</span></div>
+          </div>
+          <div class="bd-divider"></div>
+          <div class="bd-row">
+            <div class="bd-item"><span class="bd-item__label">Услуга</span><span class="bd-item__value">СПА – комплекс</span></div>
+            <div class="bd-item"><span class="bd-item__label">Расчёт стоимости</span><span class="bd-item__value">За гостя в сутки</span></div>
+            <div class="bd-item bd-item--flex"><span class="bd-item__label">Количество</span><span class="bd-item__value">1</span></div>
+          </div>
+          <div class="bd-divider"></div>
+          <div class="bd-row">
+            <div class="bd-item"><span class="bd-item__label">Услуга</span><span class="bd-item__value">Украшение номера</span></div>
+            <div class="bd-item"><span class="bd-item__label">Расчёт стоимости</span><span class="bd-item__value">За гостя</span></div>
+            <div class="bd-item bd-item--flex"><span class="bd-item__label">Количество</span><span class="bd-item__value">1</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Оплата ──────────────────────────────────────────────── -->
+      <div class="bd-section">
+        <p class="bd-section__title">Оплата</p>
+        <div class="bd-fields">
+          <div class="bd-pricelist">
+            <div class="bd-pricelist__header">
+              <div class="bd-pricelist__header-left">
+                <span class="bd-pricelist__label">Проживание 3 ночи</span>
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 5l4-4 4 4" stroke="#0d0d0f" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <span class="bd-pricelist__total">20&nbsp;000&nbsp;₽</span>
+            </div>
+            <div class="bd-pricelist__lines">
+              <div class="bd-pricelist__line"><span class="bd-pricelist__line-name">1 ночь х 1 номер · Пятница, 25 июня</span><span class="bd-pricelist__line-val">8&nbsp;000&nbsp;₽</span></div>
+              <div class="bd-pricelist__line"><span class="bd-pricelist__line-name">2 ночь х 1 номер · Суббота, 26 июня</span><span class="bd-pricelist__line-val">7&nbsp;000&nbsp;₽</span></div>
+              <div class="bd-pricelist__line"><span class="bd-pricelist__line-name">3 ночь х 1 номер · Воскресенье, 27 июня</span><span class="bd-pricelist__line-val">5&nbsp;000&nbsp;₽</span></div>
+            </div>
+          </div>
+          <div class="bd-pricelist">
+            <div class="bd-pricelist__header">
+              <div class="bd-pricelist__header-left">
+                <span class="bd-pricelist__label">Дополнительные услуги</span>
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 5l4-4 4 4" stroke="#0d0d0f" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <span class="bd-pricelist__total">11&nbsp;000&nbsp;₽</span>
+            </div>
+            <div class="bd-pricelist__lines">
+              <div class="bd-pricelist__line"><span class="bd-pricelist__line-name">Ранний заезд</span><span class="bd-pricelist__line-val">4&nbsp;000&nbsp;₽</span></div>
+              <div class="bd-pricelist__line"><span class="bd-pricelist__line-name">Поздний выезд</span><span class="bd-pricelist__line-val">5&nbsp;000&nbsp;₽</span></div>
+              <div class="bd-pricelist__line"><span class="bd-pricelist__line-name">СПА – комплекс</span><span class="bd-pricelist__line-val">1&nbsp;000&nbsp;₽</span></div>
+              <div class="bd-pricelist__line"><span class="bd-pricelist__line-name">Украшение номера</span><span class="bd-pricelist__line-val">1&nbsp;000&nbsp;₽</span></div>
+            </div>
+          </div>
+          <div class="bd-divider"></div>
+          <div class="bd-summary-block">
+            <div class="bd-summary-row"><span class="bd-summary-row__label">Всего оплачено гостем</span><span class="bd-summary-row__val">31&nbsp;000,50&nbsp;₽</span></div>
+            <div class="bd-summary-row bd-summary-row--sub"><span class="bd-summary-row__label">Промоакция «Скидки лояльным путешественникам» 5%</span><span class="bd-summary-row__val bd-summary-row__val--red">–&nbsp;3&nbsp;000&nbsp;₽</span></div>
+          </div>
+          <div class="bd-divider"></div>
+          <div class="bd-summary-block">
+            <div class="bd-summary-row"><span class="bd-summary-row__label">Объект получит</span><span class="bd-summary-row__val">28&nbsp;900&nbsp;₽</span></div>
+            <div class="bd-summary-row bd-summary-row--sub"><span class="bd-summary-row__label">Вознаграждение Яндекса с учётом скидки по совместной акции</span><span class="bd-summary-row__val bd-summary-row__val--red">–&nbsp;654&nbsp;₽</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Тариф ───────────────────────────────────────────────── -->
+      <div class="bd-section">
+        <p class="bd-section__title">Тариф</p>
+        <div class="bd-fields">
+          <div class="bd-row">
+            <div class="bd-item"><span class="bd-item__label">Название</span><span class="bd-item__value">Гибкий тариф</span></div>
+            <div class="bd-item"><span class="bd-item__label">Тип</span><span class="bd-item__value">Основной</span></div>
+          </div>
+          <div class="bd-divider"></div>
+          <div class="bd-row">
+            <div class="bd-item"><span class="bd-item__label">План питания</span><span class="bd-item__value">Без питания</span></div>
+            <div class="bd-item" style="flex:0 0 380px;">
+              <span class="bd-item__label">Правила отмены</span>
+              <div class="bd-cancellation">
+                <span class="bd-cancellation__text">Штраф за отмену (удержано) — 7&nbsp;000&nbsp;₽</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="#9c9ba2" stroke-width="1.3"/><path d="M8 7v4" stroke="#9c9ba2" stroke-width="1.3" stroke-linecap="round"/><circle cx="8" cy="5.5" r="0.75" fill="#9c9ba2"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- ═══════════════ /BookingDrawer ════════════════════════════ -->
+
+  <script>
+    function toggleSubmenu() {
+      const submenu = document.getElementById('submenu-object');
+      const snippet = document.getElementById('snippet-object');
+      const arrow   = document.getElementById('object-arrow');
+      const isOpen  = submenu.classList.toggle('ex-submenu--open');
+      snippet.classList.toggle('ex-snippet--open', isOpen);
+      arrow.classList.toggle('ex-snippet__arrow--up', isOpen);
+    }
+
+    // ─── BookingDrawer ─────────────────────────────────────────
+    var bdOverlay   = document.getElementById('bd-overlay');
+    var bdDrawer    = document.getElementById('bd-drawer');
+    var bdCloseWrap = document.getElementById('bd-close-wrap');
+    var bdCloseBtn  = document.getElementById('bd-close-btn');
+    var bdActiveRow = null;
+
+    function bdOpen(row) {
+      if (bdActiveRow) bdActiveRow.classList.remove('up-table__row--active');
+      bdActiveRow = row;
+      row.classList.add('up-table__row--active');
+      bdOverlay.classList.add('bd-overlay--visible');
+      bdDrawer.classList.add('bd-drawer--open');
+      bdCloseWrap.classList.add('bd-close-wrap--visible');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function bdClose() {
+      bdOverlay.classList.remove('bd-overlay--visible');
+      bdDrawer.classList.remove('bd-drawer--open');
+      bdCloseWrap.classList.remove('bd-close-wrap--visible');
+      document.body.style.overflow = '';
+      if (bdActiveRow) {
+        bdActiveRow.classList.remove('up-table__row--active');
+        bdActiveRow = null;
+      }
+    }
+
+    document.querySelectorAll('.up-table__row').forEach(function (row) {
+      row.addEventListener('click', function () {
+        if (bdActiveRow === row && bdDrawer.classList.contains('bd-drawer--open')) {
+          bdClose();
+        } else {
+          bdOpen(row);
+        }
+      });
+    });
+
+    bdCloseBtn.addEventListener('click', bdClose);
+    bdOverlay.addEventListener('click', bdClose);
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') bdClose();
+    });
+  </script>
+</body>
+</html>

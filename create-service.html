@@ -1088,11 +1088,13 @@
 
       function exOpenFn() {
         const rect = exSelect.getBoundingClientRect();
-        exDropdown.style.display = 'block';
-        exDropdown.style.top     = (rect.bottom + 8) + 'px';
-        exDropdown.style.left    = rect.left + 'px';
-        exDropdown.style.width   = rect.width + 'px';
-        exArrow.style.transform  = 'rotate(180deg)';
+        exDropdown.style.display    = 'block';
+        exDropdown.style.top        = (rect.bottom + 8) + 'px';
+        exDropdown.style.left       = rect.left + 'px';
+        exDropdown.style.width      = rect.width + 'px';
+        exDropdown.style.maxHeight  = '376px';
+        exDropdown.style.overflowY  = 'auto';
+        exArrow.style.transform     = 'rotate(180deg)';
         exOpen = true;
       }
 

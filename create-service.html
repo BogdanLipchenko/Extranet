@@ -153,11 +153,11 @@
                   </div>
                 </div>
 
-                <!-- Тип проживания с животными (показывается только при выборе «Проживание с животными») -->
+                <!-- Тип проживания с питомцем (показывается только при выборе «Проживание с питомцем») -->
                 <div class="cs-field-col" id="pets-type-field" style="display:none;">
                   <div class="cs-field-label-group">
                     <span class="cs-field-label">Размер животного</span>
-                    <span class="cs-field-hint">Укажите тип проживания с животными. Тип будет указан в качестве заголовка услуги</span>
+                    <span class="cs-field-hint">Укажите тип проживания с питомцем. Тип будет указан в качестве заголовка услуги</span>
                   </div>
                   <div class="cs-select cs-select--full" id="pets-type-select">
                     <span class="cs-select__placeholder" id="pets-type-label">Выберите тип проживания</span>
@@ -517,7 +517,7 @@
 
   <div class="cs-dropdown" id="service-type-dropdown" style="display:none; position:fixed; z-index:9999;">
     <div class="cs-dropdown__item" data-value="parking">Парковка</div>
-    <div class="cs-dropdown__item" data-value="pets">Проживание с животными</div>
+    <div class="cs-dropdown__item" data-value="pets">Проживание с питомцем</div>
     <div class="cs-dropdown__item" data-value="spa">СПА-комплекс</div>
     <div class="cs-dropdown__item" data-value="room-extras">Дополнения в номер</div>
   </div>
@@ -1341,7 +1341,7 @@
         restoreSelect('parking-type-label', 'parking-type-dropdown', s.parkingType);
       }
 
-      // Тип проживания с животными
+      // Тип проживания с питомцем
       if (s.serviceType === 'pets' && s.petsType) {
         document.getElementById('pets-type-field').style.display = 'flex';
         restoreSelect('pets-type-label', 'pets-type-dropdown', s.petsType);
@@ -1492,7 +1492,7 @@
           }
         }
 
-        // Валидация «Тип проживания» — только если выбраны «Проживание с животными»
+        // Валидация «Тип проживания» — только если выбраны «Проживание с питомцем»
         if (serviceTypeLabel.dataset.value === 'pets') {
           const petsSelect = document.getElementById('pets-type-select');
           const petsLabel  = document.getElementById('pets-type-label');
@@ -1586,7 +1586,7 @@
           // Вид парковки
           parkingType:      parkingTypeLabel.dataset.value || '',
           parkingTypeText:  parkingTypeLabel.classList.contains('cs-select__placeholder') ? '' : parkingTypeLabel.textContent,
-          // Тип проживания с животными
+          // Тип проживания с питомцем
           petsType:         document.getElementById('pets-type-label').dataset.value || '',
           petsTypeText:     document.getElementById('pets-type-label').classList.contains('cs-select__placeholder') ? '' : document.getElementById('pets-type-label').textContent,
           // Тип СПА-комплекса

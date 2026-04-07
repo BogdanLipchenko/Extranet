@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Extranet — Удобства объекта</title>
+  <link rel="stylesheet" href="/Base2.0/tokens/tokens.css">
+  <link rel="stylesheet" href="/Base2.0/styles/fonts.css">
+  <link rel="stylesheet" href="/Extranet/styles.css">
+  <style>
+    /* ═══════════════════════════════════════════════════════════
+       Amenities page  (am-*)
+       ═══════════════════════════════════════════════════════════ */
+
+    /* ─── Layout ──────────────────────────────────────────────── */
+    .am-layout {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    /* ─── Left column ─────────────────────────────────────────── */
+    .am-left {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    /* ─── Page header ─────────────────────────────────────────── */
+    .am-header {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .am-title {
+      font-family: var(--font-family-display, 'YS Display', sans-serif);
+      font-size: 32px;
+      font-weight: 500;
+      line-height: 32px;
+      letter-spacing: -0.48px;
+      color: #0d0d0f;
+      font-feature-settings: 'lnum', 'pnum';
+    }
+
+    .am-subtitle {
+      font-family: var(--font-family-text, 'YS Text', sans-serif);
+      font-size: 16px;
+      line-height: 20px;
+      color: #9c9ba2;
+      font-feature-settings: 'case', 'lnum', 'pnum';
+      max-width: 720px;
+    }
+
+    /* ─── Search & Filter bar ─────────────────────────────────── */
+    .am-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .am-search {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #f5f5f5;
+      border-radius: 20px;
+      padding: 14px 16px;
+      height: 56px;
+    }
+
+    .am-search__icon {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      opacity: 0.4;
+    }
+
+    .am-search__input {
+      flex: 1;
+      border: none;
+      background: none;
+      outline: none;
+      font-family: var(--font-family-text, 'YS Text', sans-serif);
+      font-size: 16px;
+      line-height: 20px;
+      color: #0d0d0f;
+      font-feature-settings: 'case', 'lnum', 'pnum';
+    }
+
+    .am-search__input::placeholder {
+      color: #9c9ba2;
+    }
+
+    /* ─── Filter chips row ────────────────────────────────────── */
+    .am-chips {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 2px;
+      position: relative;
+      scrollbar-width: none;
+    }
+
+    .am-chips::-webkit-scrollbar { display: none; }
+
+    .am-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      height: 48px;
+      padding: 0 16px;
+      background: #f2f2f2;
+      border-radius: 16px;
+      border: none;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: background 0.15s;
+      font-family: var(--font-family-text, 'YS Text', sans-serif);
+      font-feature-settings: 'lnum', 'pnum';
+    }
+
+    .am-chip:hover { background: #e8e8e8; }
+
+    .am-chip--active {
+      background: #0d0d0f;
+    }
+
+    .am-chip--active .am-chip__label { color: #fff; }
+    .am-chip--active .am-chip__count { color: rgba(255,255,255,0.6); }
+
+    .am-chip__label {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 20px;
+      color: #0d0d0f;
+      white-space: nowrap;
+    }
+
+    .am-chip__count {
+      font-size: 16px;
+      line-height: 20px;
+      color: #9c9ba2;
+      white-space: nowrap;
+    }
+
+    /* ─── Category card ───────────────────────────────────────── */
+    .am-category {
+      border: 1px solid #e6e5e7;
+      border-radius: 32px;
+      padding: 28px 28px 20px 28px;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .am-category__head {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 12px;
+    }
+
+    .am-category__title {
+      font-family: var(--font-family-display, 'YS Display', sans-serif);
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 28px;
+      letter-spacing: -0.24px;
+      color: #0d0d0f;
+      font-feature-settings: 'lnum', 'pnum';
+    }
+
+    .am-category__count {
+      font-family: var(--font-family-text, 'YS Text', sans-serif);
+      font-size: 14px;
+      line-height: 18px;
+      color: #9c9ba2;
+      font-feature-settings: 'lnum', 'pnum';
+    }
+
+    /* ─── Amenity row ─────────────────────────────────────────── */
+    .am-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 0;
+      border-bottom: 1px solid #e6e5e7;
+    }
+
+    .am-row:last-child {
+      border-bottom: none;
+    }
+
+    /* Icon + text */
+    .am-row__info {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .am-row__icon {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .am-row__icon svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .am-row__text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+    }
+
+    .am-row__name {
+      font-family: var(--font-family-text, 'YS Text', sans-serif);
+      font-size: 16px;
+      line-height: 20px;
+      color: #0d0d0f;
+      font-feature-settings: 'case', 'lnum', 'pnum';
+      white-space: nowrap;
+    }
+
+    .am-row__caption {
+      font-family: var(--font-family-text, 'YS Text', sans-serif);
+      font-size: 14px;
+      line-height: 18px;
+      color: #9c9ba2;
+      font-feature-settings: 'lnum', 'pnum';
+      white-space: nowrap;
+    }
+
+    /* Edit button */
+    .am-row__edit {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: #ededee;
+      border-radius: 16px;
+      border: none;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: background 0.15s;
+    }
+
+    .am-row__edit:hover { background: #e0e0e1; }
+
+    .am-row__edit svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* ─── Toggle ──────────────────────────────────────────────── */
+    .am-toggle {
+      position: relative;
+      width: 60px;
+      height: 40px;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .am-toggle input {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .am-toggle__track {
+      position: absolute;
+      inset: 0;
+      background: #f2f2f2;
+      border-radius: 100px;
+      transition: background 0.2s;
+    }
+
+    .am-toggle input:checked + .am-toggle__track {
+      background: #fed42b;
+    }
+
+    .am-toggle__knob {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      width: 32px;
+      height: 32px;
+      background: #fff;
+      border-radius: 100px;
+      box-shadow: 0 2px 6px rgba(13,13,15,0.10), 0 1px 2px rgba(13,13,15,0.06);
+      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      pointer-events: none;
+    }
+
+    .am-toggle input:checked ~ .am-toggle__knob {
+      transform: translateX(20px);
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       Amenity Drawer  (amd-*)
+       ═══════════════════════════════════════════════════════════ */
+
+    .amd-overlay {
+      position: fixed; inset: 0;
+      background: rgba(13,13,15,.48);
+      z-index: 200; opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s ease;
+    }
+    .amd-overlay--visible { opacity: 1; pointer-events: auto; }
+
+    .amd-drawer {
+      position: fixed; top: 0; right: 0; bottom: 0;
+      width: 700px;
+      background: #fff;
+      border-radius: 32px 0 0 32px;
+      box-shadow: 0 4px 24px rgba(13,35,67,.18);
+      z-index: 201;
+      overflow-y: auto;
+      transform: translateX(100%);
+      transition: transform .35s cubic-bezier(.4,0,.2,1);
+    }
+    .amd-drawer--open { transform: translateX(0); }
+
+    .amd-close-wrap {
+      position: fixed; top: 0; right: 700px; bottom: 0;
+      width: 80px; z-index: 202;
+      display: flex; align-items: flex-start;
+      justify-content: flex-end;
+      padding-top: 20px; padding-right: 12px;
+      opacity: 0; pointer-events: none;
+      transition: opacity .3s ease;
+    }
+    .amd-close-wrap--visible { opacity: 1; pointer-events: auto; }
+
+    .amd-close-btn {
+      display: flex; align-items: center; justify-content: center;
+      width: 56px; height: 56px;
+      background: #fff; border: none; border-radius: 20px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(13,13,15,.12);
+    }
+    .amd-close-btn:hover { background: #f5f5f5; }
+    .amd-close-btn svg { width: 24px; height: 24px; }
+
+    /* ─── Drawer inner ──────────────────────────────────────── */
+    .amd-inner {
+      padding: 28px 40px 40px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    /* Header row */
+    .amd-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .amd-title {
+      font-family: var(--font-family-display, 'YS Display', sans-serif);
+      font-size: 32px;
+      font-weight: 500;
+      line-height: 32px;
+      letter-spacing: -0.48px;
+      color: #0d0d0f;
+      font-feature-settings: 'lnum', 'pnum';
+    }
+
+    /* ─── Section title ─────────────────────────────────────── */
+    .amd-section-title {
+      font-family: var(--font-family-display, 'YS Display', sans-serif);
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 24px;
+      color: #0d0d0f;
+      font-feature-settings: 'lnum', 'pnum';
+      margin-bottom: 16px;
+    }
+
+    /* ─── Segmented control ─────────────────────────────────── */
+    .amd-segmented {
+      display: flex;
+      background: #f2f2f2;
+      border-radius: 20px;
+      padding: 4px;
+      height: 56px;
+      margin-bottom: 16px;
+    }
+
+    .amd-segmented__tab {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 16px;
+      font-family: var(--font-family-text, 'YS Text', sans-serif);
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 18px;
+      color: #0d0d0f;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      transition: background 0.15s, box-shadow 0.15s;
+    }
+
+    .amd-segmented__tab--active {
+      background: #fff;
+      box-shadow: 0 4px 20px rgba(13,13,15,.08);
+    }
+
+    /* ─── Dropzone ──────────────────────────────────────────── */
+    .amd-dropzone {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      border: 1px dashed #cdcccf;
+      border-radius: 40px;
+      padding: 48px 24px;
+      min-height: 360px;
+      cursor: pointer;
+      text-align: center;
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .amd-dropzone:hover {
+      border-color: #9c9ba2;
+      background: #f9f9f9;
+    }
+
+    .amd-dropzone__icon {
+      width: 32px; height: 32px;
+      opacity: 0.5;
+    }
+
+    .amd-dropzone__title {
+      font-family: var(--font-family-display, 'YS Display', sans-serif);
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 24px;
+      color: #0d0d0f;
+    }
+
+    .amd-dropzone__hint {
+      font-family: var(--font-family-text, 'YS Text', sans-serif);
+      font-size: 14px;
+      line-height: 18px;
+      color: #9c9ba2;
+    }
+
+    .amd-dropzone__btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 20px;
+      background: #f2f2f2;
+      border-radius: 16px;
+      border: none;
+      cursor: pointer;
+      font-family: var(--font-family-text, 'YS Text', sans-serif);
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 20px;
+      color: #0d0d0f;
+      transition: background 0.15s;
+      margin-top: 4px;
+    }
+
+    .amd-dropzone__btn:hover { background: #e8e8e8; }
+
+    /* ─── Radio buttons ─────────────────────────────────────── */
+    .amd-radio-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .amd-radio-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 0;
+      cursor: pointer;
+    }
+
+    .amd-radio-item input[type="radio"] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: #f2f2f2;
+      flex-shrink: 0;
+      cursor: pointer;
+      position: relative;
+      transition: background 0.15s;
+    }
+
+    .amd-radio-item input[type="radio"]:checked {
+      background: #0d0d0f;
+    }
+
+    .amd-radio-item input[type="radio"]:checked::after {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: #fff;
+    }
+
+    .amd-radio-item__label {
+      font-family: var(--font-family-text, 'YS Text', sans-serif);
+      font-size: 16px;
+      line-height: 20px;
+      color: #0d0d0f;
+      font-feature-settings: 'case', 'lnum', 'pnum';
+    }
+
+    /* ─── Promo Banner ──────────────────────────────────────── */
+    .amd-banner {
+      position: relative;
+      border-radius: 32px;
+      overflow: hidden;
+      background: linear-gradient(147deg, #d9d5ff 7%, #f3f0ff 111%);
+      padding: 28px;
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+      min-height: 200px;
+    }
+
+    .amd-banner__content {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      flex: 1;
+      min-width: 0;
+      max-width: 360px;
+      z-index: 1;
+    }
+
+    .amd-banner__title {
+      font-family: var(--font-family-display, 'YS Display', sans-serif);
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 28px;
+      letter-spacing: -0.24px;
+      color: #0d0d0f;
+    }
+
+    .amd-banner__text {
+      font-family: var(--font-family-text, 'YS Text', sans-serif);
+      font-size: 16px;
+      line-height: 20px;
+      color: #0d0d0f;
+      font-feature-settings: 'case', 'lnum', 'pnum';
+    }
+
+    .amd-banner__btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 56px;
+      padding: 0 20px;
+      background: #fff;
+      border-radius: 20px;
+      border: none;
+      cursor: pointer;
+      font-family: var(--font-family-text, 'YS Text', sans-serif);
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 20px;
+      color: #0d0d0f;
+      white-space: nowrap;
+      width: fit-content;
+      text-decoration: none;
+      transition: box-shadow 0.15s;
+    }
+
+    .amd-banner__btn:hover {
+      box-shadow: 0 4px 12px rgba(13,13,15,.12);
+    }
+
+    .amd-banner__imgs {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 260px;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .amd-banner__img1 {
+      position: absolute;
+      left: 0;
+      top: 20%;
+      width: 150px;
+      height: 232px;
+      border-radius: 16px;
+      object-fit: cover;
+      box-shadow: 0 6px 30px rgba(13,13,15,.08);
+      transform: rotate(-4.79deg);
+    }
+
+    .amd-banner__img2 {
+      position: absolute;
+      left: 88px;
+      top: 14%;
+      width: 150px;
+      height: 232px;
+      border-radius: 16px;
+      object-fit: cover;
+      transform: rotate(3.21deg);
+    }
+
+    /* ─── Drawer toggle ─────────────────────────────────────── */
+    .amd-toggle {
+      position: relative;
+      width: 60px;
+      height: 40px;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .amd-toggle input {
+      position: absolute; opacity: 0; width: 0; height: 0;
+    }
+
+    .amd-toggle__track {
+      position: absolute; inset: 0;
+      background: #f2f2f2;
+      border-radius: 100px;
+      transition: background 0.2s;
+    }
+
+    .amd-toggle input:checked + .amd-toggle__track {
+      background: #fed42b;
+    }
+
+    .amd-toggle__knob {
+      position: absolute;
+      top: 4px; left: 4px;
+      width: 32px; height: 32px;
+      background: #fff;
+      border-radius: 100px;
+      box-shadow: 0 2px 6px rgba(13,13,15,.10), 0 1px 2px rgba(13,13,15,.06);
+      transition: transform 0.2s cubic-bezier(0.4,0,0.2,1);
+      pointer-events: none;
+    }
+
+    .amd-toggle input:checked ~ .amd-toggle__knob {
+      transform: translateX(20px);
+    }
+
+    /* ─── Right sticky nav ────────────────────────────────────── */
+    .am-nav {
+      flex: 0 0 200px;
+      position: sticky;
+      top: calc(68px + 20px);
+    }
+
+    .am-nav__card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      box-shadow: 0 2px 16px rgba(13,13,15,0.07);
+    }
+
+    .am-nav__item {
+      padding: 10px 12px;
+      border-radius: 12px;
+      font-family: var(--font-family-text, 'YS Text', sans-serif);
+      font-size: 15px;
+      line-height: 20px;
+      color: #0d0d0f;
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+
+    .am-nav__item:hover { background: #f5f5f5; }
+
+    .am-nav__item--active {
+      background: #f5f5f5;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="extranet-layout">
+
+    <!-- ─── Header ─────────────────────────────────────────────── -->
+    <header class="ex-header">
+      <div class="ex-header__left">
+        <a href="/Extranet/index.html" class="ex-logo">
+          <img src="/Base2.0/assets/LogoWrapper.svg" alt="Яндекс Путешествия">
+        </a>
+
+        <div class="ex-hotel-selector">
+          <span class="ex-hotel-selector__name">Cosmos Sochi Hotel Spa &amp; Resort</span>
+          <div class="ex-hotel-selector__stars">
+            <img src="/Extranet/assets/878c8e678a9e6ac3c66f79e14227854a33bf4ea5.svg" alt="★" width="16" height="16">
+            <img src="/Extranet/assets/878c8e678a9e6ac3c66f79e14227854a33bf4ea5.svg" alt="★" width="16" height="16">
+            <img src="/Extranet/assets/878c8e678a9e6ac3c66f79e14227854a33bf4ea5.svg" alt="★" width="16" height="16">
+          </div>
+          <div class="ex-hotel-selector__divider"></div>
+          <span class="ex-hotel-selector__meta">Гостиница&nbsp; •&nbsp; ID 49531951</span>
+          <span class="ex-hotel-selector__status">Размещается</span>
+          <div class="ex-hotel-selector__divider"></div>
+          <img src="/Extranet/assets/5fa4c68451031fbb33538a898504e75abbfcc20d.svg" alt="" class="ex-hotel-selector__arrow" style="transform: rotate(-90deg); width:16px; height:16px;">
+        </div>
+      </div>
+
+      <div class="ex-header__right">
+        <button class="ex-btn-help">
+          Помощь
+          <img src="/Extranet/assets/0f16f7d2ba0b8eec5236bf3397557b2d69c03000.svg" alt="" width="16" height="16">
+        </button>
+        <div class="ex-avatar">
+          <img src="/Extranet/assets/38314a65e2a3d14ef6ff5023304bc46c69811c4c.png" alt="User">
+        </div>
+      </div>
+    </header>
+
+    <!-- ─── Body ──────────────────────────────────────────────── -->
+    <div class="ex-body">
+
+      <!-- ─── Sidebar ─────────────────────────────────── -->
+      <aside class="ex-sidebar">
+        <nav class="ex-sidebar__menu">
+          <ul class="ex-sidebar__list">
+            <a href="/Extranet/index.html" class="ex-snippet" style="text-decoration:none;">
+              <span class="ex-snippet__icon">
+                <img src="/Extranet/assets/3bc786262dec2fc94cab417e7cd8f754dcd001c2.svg" alt="" width="20" height="20">
+              </span>
+              <span class="ex-snippet__label">Главная</span>
+            </a>
+            <li class="ex-snippet">
+              <span class="ex-snippet__icon">
+                <img src="/Extranet/assets/8adeb14e650b099aae78d50547aa18e193871963.svg" alt="" width="20" height="20">
+              </span>
+              <span class="ex-snippet__label">Категории номеров</span>
+            </li>
+            <li class="ex-snippet">
+              <span class="ex-snippet__icon">
+                <img src="/Extranet/assets/b1fe04d7e178c84eb0062a43494cdf97f6b9081f.svg" alt="" width="20" height="20">
+              </span>
+              <span class="ex-snippet__label">Тарифы</span>
+            </li>
+            <li class="ex-snippet">
+              <span class="ex-snippet__icon">
+                <img src="/Extranet/assets/6718807c76904b2168981ed37b9888bfc2d5cfc1.svg" alt="" width="20" height="20">
+              </span>
+              <span class="ex-snippet__label">Доступность и цены</span>
+            </li>
+            <li class="ex-snippet">
+              <span class="ex-snippet__icon">
+                <img src="/Extranet/assets/b1fe04d7e178c84eb0062a43494cdf97f6b9081f.svg" alt="" width="20" height="20">
+              </span>
+              <span class="ex-snippet__label">Аналитика</span>
+            </li>
+            <li class="ex-snippet ex-snippet--has-submenu" id="snippet-object" onclick="toggleSubmenu()">
+              <span class="ex-snippet__icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.42285 17.7715C8.41405 17.7643 8.40518 17.7573 8.39648 17.75C8.40518 17.7573 8.41406 17.7643 8.42285 17.7715ZM13.7705 8.06445C13.5018 7.89823 13.1622 7.89813 12.8936 8.06445L9.56055 10.1279C9.31526 10.2798 9.16613 10.5475 9.16602 10.8359V15.833C9.16628 16.293 9.53895 16.666 9.99902 16.666H16.666C17.1259 16.6658 17.4988 16.2929 17.499 15.833V10.8359C17.4989 10.5476 17.3497 10.2798 17.1045 10.1279L13.7705 8.06445ZM3.83203 3.66699C3.2799 3.66717 2.83203 4.11482 2.83203 4.66699V15.334C2.83238 15.8859 3.28011 16.3338 3.83203 16.334H7.5498C7.51684 16.1721 7.49906 16.0046 7.49902 15.833V10.8359C7.49914 9.97028 7.94754 9.16659 8.68359 8.71094L10.499 7.58691V4.66699C10.499 4.11482 10.0512 3.66717 9.49902 3.66699H3.83203ZM12.499 18.334H3.83203L3.67773 18.3301C2.14404 18.2522 0.913958 17.0219 0.835938 15.4883L0.832031 15.334V4.66699C0.832031 3.01025 2.17533 1.66717 3.83203 1.66699H9.49902L9.65332 1.6709C11.2383 1.75137 12.499 3.062 12.499 4.66699V6.41504C12.4961 6.41607 12.4931 6.41693 12.4902 6.41797C13.1978 6.16488 13.9936 6.24209 14.6484 6.64746L17.9814 8.71094C18.7175 9.1666 19.1659 9.97029 19.166 10.8359V15.833C19.1658 17.2134 18.0464 18.3328 16.666 18.333H12.499V18.334Z" fill="#0D0D0F"/><rect x="4.16602" y="5" width="1.66667" height="1.66667" fill="#0D0D0F"/><rect x="4.16602" y="8.33334" width="1.66667" height="1.66667" fill="#0D0D0F"/><rect x="4.16602" y="11.6667" width="1.66667" height="1.66667" fill="#0D0D0F"/><rect x="7.5" y="5" width="1.66667" height="1.66667" fill="#0D0D0F"/><rect x="10.832" y="10.8333" width="1.66667" height="1.66667" fill="#0D0D0F"/><rect x="14.166" y="10.8333" width="1.66667" height="1.66667" fill="#0D0D0F"/><rect x="12.5" y="14.1667" width="1.66667" height="2.5" fill="#0D0D0F"/></svg>
+              </span>
+              <span class="ex-snippet__label">Объект</span>
+              <span class="ex-snippet__lamp">
+                <img src="/Extranet/assets/014f2e8cb513fc61d56c389a19389c9f83a7fdf3.svg" alt="" width="16" height="16">
+              </span>
+            </li>
+            <li class="ex-snippet">
+              <span class="ex-snippet__icon">
+                <img src="/Extranet/assets/d44fcc869a4752109bb274d0ad32b79adb279e1d.svg" alt="" width="20" height="20">
+              </span>
+              <span class="ex-snippet__label">Продвижение</span>
+            </li>
+          </ul>
+
+          <div class="ex-sidebar__divider"></div>
+
+          <ul class="ex-sidebar__list">
+            <a href="/Extranet/bookings.html" class="ex-snippet" style="text-decoration:none;">
+              <span class="ex-snippet__icon">
+                <img src="/Extranet/assets/8c0527ee1c6aa7f0f9e68ebe4af1b64ba7e3fd60.svg" alt="" width="20" height="20">
+              </span>
+              <span class="ex-snippet__label">Бронирования</span>
+            </a>
+            <li class="ex-snippet">
+              <span class="ex-snippet__icon">
+                <img src="/Extranet/assets/b2b597a38cd6603580eace27315e018a40abfd3b.svg" alt="" width="20" height="20">
+              </span>
+              <span class="ex-snippet__label">Платежи</span>
+            </li>
+          </ul>
+        </nav>
+
+        <button class="ex-snippet ex-snippet--collapse">
+          <span class="ex-snippet__icon">
+            <img src="/Extranet/assets/5fa4c68451031fbb33538a898504e75abbfcc20d.svg" alt="" width="16" height="16">
+          </span>
+          <span class="ex-snippet__label">Свернуть</span>
+        </button>
+      </aside>
+
+      <!-- ─── Submenu: Объект ─────────────────────────── -->
+      <div class="ex-submenu" id="submenu-object">
+        <ul class="ex-submenu__list">
+          <li class="ex-submenu__item">Правила проживания</li>
+          <li class="ex-submenu__item">Договор и отчеты</li>
+          <li class="ex-submenu__item">Удобства в номерах</li>
+          <li class="ex-submenu__item ex-submenu__item--active">
+            <a href="/Extranet/amenities.html" class="ex-submenu__link ex-submenu__link--active">Удобства объекта</a>
+          </li>
+          <li class="ex-submenu__item ex-submenu__item--with-badge">
+            <a href="/Extranet/paid-services.html" class="ex-submenu__link">Платные услуги</a>
+            <span class="ex-submenu__badge">Новое</span>
+          </li>
+          <li class="ex-submenu__item">История изменений</li>
+          <li class="ex-submenu__item">Менеджер каналов</li>
+          <li class="ex-submenu__item">Адрес объекта</li>
+        </ul>
+      </div>
+
+      <!-- ─── Main content ────────────────────────────── -->
+      <main class="ex-main">
+        <div class="am-layout">
+
+          <!-- ── Left column ───────────────────────────────────── -->
+          <div class="am-left">
+
+            <!-- Header -->
+            <div class="am-header">
+              <h1 class="am-title">Удобства объекта</h1>
+              <p class="am-subtitle">Расскажите гостям о преимуществах и особенностях вашего объекта, чтобы сделать страницу объекта более привлекательной и побудить гостей выбрать ваш объект среди прочих</p>
+            </div>
+
+            <!-- Search + Chips -->
+            <div class="am-controls">
+              <div class="am-search">
+                <svg class="am-search__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#0d0d0f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M21 21L16.65 16.65" stroke="#0d0d0f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <input type="text" class="am-search__input" placeholder="Название удобства или услуги">
+              </div>
+
+              <div class="am-chips" id="am-chips">
+                <button class="am-chip am-chip--active" data-filter="added" onclick="setFilter(this, 'added')">
+                  <span class="am-chip__label">Добавленные</span>
+                  <span class="am-chip__count">125</span>
+                </button>
+                <button class="am-chip" data-filter="filters" onclick="setFilter(this, 'filters')">
+                  <span class="am-chip__label">Есть в фильтрах</span>
+                  <span class="am-chip__count">125</span>
+                </button>
+                <button class="am-chip" data-filter="recommended" onclick="setFilter(this, 'recommended')">
+                  <span class="am-chip__label">Разметили за вас</span>
+                  <span class="am-chip__count">125</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- ─── Category: Основные ─────────────────────────── -->
+            <div class="am-category" id="cat-main">
+              <div class="am-category__head">
+                <h2 class="am-category__title">Основные</h2>
+                <span class="am-category__count">4 удобства указано</span>
+              </div>
+
+              <!-- Парковка -->
+              <div class="am-row">
+                <div class="am-row__info">
+                  <div class="am-row__icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z" stroke="#0d0d0f" stroke-width="1.5"/>
+                      <path d="M9 17V8h4a3 3 0 110 6H9" stroke="#0d0d0f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <div class="am-row__text">
+                    <span class="am-row__name">Парковка</span>
+                  </div>
+                </div>
+                <button class="am-row__edit" title="Редактировать">
+                  <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.333 2a1.886 1.886 0 012.667 2.667L5.333 13.333 2 14l.667-3.333L11.333 2z" stroke="#0d0d0f" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+                <label class="am-toggle">
+                  <input type="checkbox" checked onchange="updateCount(this)">
+                  <span class="am-toggle__track"></span>
+                  <span class="am-toggle__knob"></span>
+                </label>
+              </div>
+
+              <!-- Специальное меню -->
+              <div class="am-row">
+                <div class="am-row__info">
+                  <div class="am-row__icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3 11h18M3 11V8a6 6 0 0112 0v3M3 11v2a2 2 0 002 2h14a2 2 0 002-2v-2" stroke="#0d0d0f" stroke-width="1.5" stroke-linecap="round"/>
+                      <path d="M12 15v4M8 19h8" stroke="#0d0d0f" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                  </div>
+                  <div class="am-row__text">
+                    <span class="am-row__name">Специальное меню</span>
+                    <span class="am-row__caption">Вегетарианское, без глютена</span>
+                  </div>
+                </div>
+                <button class="am-row__edit" title="Редактировать">
+                  <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.333 2a1.886 1.886 0 012.667 2.667L5.333 13.333 2 14l.667-3.333L11.333 2z" stroke="#0d0d0f" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+                <label class="am-toggle">
+                  <input type="checkbox" checked onchange="updateCount(this)">
+                  <span class="am-toggle__track"></span>
+                  <span class="am-toggle__knob"></span>
+                </label>
+              </div>
+
+              <!-- Бассейн -->
+              <div class="am-row">
+                <div class="am-row__info">
+                  <div class="am-row__icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M2 20c1.5 0 1.5-1 3-1s1.5 1 3 1 1.5-1 3-1 1.5 1 3 1 1.5-1 3-1 1.5 1 3 1" stroke="#0d0d0f" stroke-width="1.5" stroke-linecap="round"/>
+                      <path d="M2 16c1.5 0 1.5-1 3-1s1.5 1 3 1 1.5-1 3-1 1.5 1 3 1 1.5-1 3-1 1.5 1 3 1" stroke="#0d0d0f" stroke-width="1.5" stroke-linecap="round"/>
+                      <circle cx="19" cy="5" r="2" stroke="#0d0d0f" stroke-width="1.5"/>
+                      <path d="M9 12V8l4-3 3 3h-3V9" stroke="#0d0d0f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <div class="am-row__text">
+                    <span class="am-row__name">Бассейн</span>
+                  </div>
+                </div>
+                <label class="am-toggle">
+                  <input type="checkbox" onchange="updateCount(this)">
+                  <span class="am-toggle__track"></span>
+                  <span class="am-toggle__knob"></span>
+                </label>
+              </div>
+
+              <!-- СПА – комплекс -->
+              <div class="am-row">
+                <div class="am-row__info">
+                  <div class="am-row__icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 22c4.418 0 8-3.582 8-8H4c0 4.418 3.582 8 8 8z" stroke="#0d0d0f" stroke-width="1.5"/>
+                      <path d="M12 14V8M8 10c0-2.21 1.343-4 4-4 2.657 0 4 1.79 4 4" stroke="#0d0d0f" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                  </div>
+                  <div class="am-row__text">
+                    <span class="am-row__name">СПА – комплекс</span>
+                  </div>
+                </div>
+                <label class="am-toggle">
+                  <input type="checkbox" onchange="updateCount(this)">
+                  <span class="am-toggle__track"></span>
+                  <span class="am-toggle__knob"></span>
+                </label>
+              </div>
+            </div>
+
+            <!-- ─── Category: Питание и кухня ─────────────────── -->
+            <div class="am-category" id="cat-food">
+              <div class="am-category__head">
+                <h2 class="am-category__title">Питание и кухня</h2>
+                <span class="am-category__count">4 из 8 удобств</span>
+              </div>
+
+              <div class="am-row">
+                <div class="am-row__info">
+                  <div class="am-row__icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8 3v5a4 4 0 008 0V3" stroke="#0d0d0f" stroke-width="1.5" stroke-linecap="round"/>
+                      <path d="M12 12v9M9 21h6" stroke="#0d0d0f" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                  </div>
+                  <div class="am-row__text"><span class="am-row__name">Бар</span></div>
+                </div>
+                <label class="am-toggle">
+                  <input type="checkbox" onchange="updateCount(this)">
+                  <span class="am-toggle__track"></span>
+                  <span class="am-toggle__knob"></span>
+                </label>
+              </div>
+
+              <div class="am-row">
+                <div class="am-row__info">
+                  <div class="am-row__icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17 8h1a4 4 0 010 8h-1" stroke="#0d0d0f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M3 8h14v9a4 4 0 01-4 4H7a4 4 0 01-4-4V8z" stroke="#0d0d0f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M6 2v4M10 2v4M14 2v4" stroke="#0d0d0f" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                  </div>
+                  <div class="am-row__text"><span class="am-row__name">Кафе</span></div>
+                </div>
+                <label class="am-toggle">
+                  <input type="checkbox" onchange="updateCount(this)">
+                  <span class="am-toggle__track"></span>
+                  <span class="am-toggle__knob"></span>
+                </label>
+              </div>
+
+              <div class="am-row">
+                <div class="am-row__info">
+                  <div class="am-row__icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3 6h18M3 12h18M3 18h18" stroke="#0d0d0f" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                  </div>
+                  <div class="am-row__text"><span class="am-row__name">Общая кухня</span></div>
+                </div>
+                <label class="am-toggle">
+                  <input type="checkbox" onchange="updateCount(this)">
+                  <span class="am-toggle__track"></span>
+                  <span class="am-toggle__knob"></span>
+                </label>
+              </div>
+
+              <div class="am-row">
+                <div class="am-row__info">
+                  <div class="am-row__icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3 11l9-9 9 9v9a2 2 0 01-2 2H5a2 2 0 01-2-2v-9z" stroke="#0d0d0f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M9 22V12h6v10" stroke="#0d0d0f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <div class="am-row__text"><span class="am-row__name">Ресторан</span></div>
+                </div>
+                <label class="am-toggle">
+                  <input type="checkbox" checked onchange="updateCount(this)">
+                  <span class="am-toggle__track"></span>
+                  <span class="am-toggle__knob"></span>
+                </label>
+              </div>
+
+              <div class="am-row">
+                <div class="am-row__info">
+                  <div class="am-row__icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M2 9h20M2 9l2-6h16l2 6M2 9v9a2 2 0 002 2h16a2 2 0 002-2V9" stroke="#0d0d0f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <div class="am-row__text"><span class="am-row__name">Столовая</span></div>
+                </div>
+                <label class="am-toggle">
+                  <input type="checkbox" onchange="updateCount(this)">
+                  <span class="am-toggle__track"></span>
+                  <span class="am-toggle__knob"></span>
+                </label>
+              </div>
+
+              <div class="am-row">
+                <div class="am-row__info">
+                  <div class="am-row__icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z" stroke="#0d0d0f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M6 2v4M10 2v4M14 2v4" stroke="#0d0d0f" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                  </div>
+                  <div class="am-row__text"><span class="am-row__name">Кофемашина</span></div>
+                </div>
+                <label class="am-toggle">
+                  <input type="checkbox" onchange="updateCount(this)">
+                  <span class="am-toggle__track"></span>
+                  <span class="am-toggle__knob"></span>
+                </label>
+              </div>
+
+              <div class="am-row">
+                <div class="am-row__info">
+                  <div class="am-row__icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="3" y="3" width="18" height="14" rx="2" stroke="#0d0d0f" stroke-width="1.5"/>
+                      <path d="M3 9h18M7 21h10M12 17v4" stroke="#0d0d0f" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                  </div>
+                  <div class="am-row__text"><span class="am-row__name">Доставка еды в номер</span></div>
+                </div>
+                <label class="am-toggle">
+                  <input type="checkbox" onchange="updateCount(this)">
+                  <span class="am-toggle__track"></span>
+                  <span class="am-toggle__knob"></span>
+                </label>
+              </div>
+            </div>
+
+            <!-- ─── Category: SPA и релакс ─────────────────────── -->
+            <div class="am-category" id="cat-spa">
+              <div class="am-category__head">
+                <h2 class="am-category__title">SPA и релакс</h2>
+                <span class="am-category__count">4 из 8 удобств</span>
+              </div>
+
+              <div class="am-row">
+                <div class="am-row__info">
+                  <div class="am-row__icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 22c4.418 0 8-3.582 8-8H4c0 4.418 3.582 8 8 8z" stroke="#0d0d0f" stroke-width="1.5"/>
+                      <path d="M7 14c0-2.761 2.239-5 5-5s5 2.239 5 5" stroke="#0d0d0f" stroke-width="1.5" stroke-linecap="round"/>
+                      <path d="M12 9V6M9 7l3-1M15 7l-3-1" stroke="#0d0d0f" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                  </div>
+                  <div class="am-row__text"><span class="am-row__name">Сауна</span></div>
+                </div>
+                <label class="am-toggle">
+                  <input type="checkbox" onchange="updateCount(this)">
+                  <span class="am-toggle__track"></span>
+                  <span class="am-toggle__knob"></span>
+                </label>
+              </div>
+
+              <div class="am-row">
+                <div class="am-row__info">
+                  <div class="am-row__icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M2 20c1.5 0 1.5-1 3-1s1.5 1 3 1 1.5-1 3-1 1.5 1 3 1 1.5-1 3-1 1.5 1 3 1" stroke="#0d0d0f" stroke-width="1.5" stroke-linecap="round"/>
+                      <path d="M2 16c1.5 0 1.5-1 3-1s1.5 1 3 1 1.5-1 3-1 1.5 1 3 1 1.5-1 3-1 1.5 1 3 1" stroke="#0d0d0f" stroke-width="1.5" stroke-linecap="round"/>
+                      <circle cx="19" cy="5" r="2" stroke="#0d0d0f" stroke-width="1.5"/>
+                      <path d="M9 12V8l4-3 3 3h-3V9" stroke="#0d0d0f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <div class="am-row__text"><span class="am-row__name">Бассейн</span></div>
+                </div>
+                <label class="am-toggle">
+                  <input type="checkbox" checked onchange="updateCount(this)">
+                  <span class="am-toggle__track"></span>
+                  <span class="am-toggle__knob"></span>
+                </label>
+              </div>
+
+              <div class="am-row">
+                <div class="am-row__info">
+                  <div class="am-row__icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.5 6.5C5.6 5.6 5 4.4 5 3c2.2 0 4.1 1.3 5 3.1" stroke="#0d0d0f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M5.5 14.5C3.6 12.6 3 10 3 8c3 0 5.5 1.5 7 4" stroke="#0d0d0f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M10 12c2-2.5 5-4 8-4 0 3.5-1.5 6.5-4 8L12 21H8l-2-4C4 15 4 12.5 5.5 11L10 12z" stroke="#0d0d0f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <div class="am-row__text"><span class="am-row__name">Массаж</span></div>
+                </div>
+                <label class="am-toggle">
+                  <input type="checkbox" onchange="updateCount(this)">
+                  <span class="am-toggle__track"></span>
+                  <span class="am-toggle__knob"></span>
+                </label>
+              </div>
+
+              <div class="am-row">
+                <div class="am-row__info">
+                  <div class="am-row__icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="12" cy="12" r="9" stroke="#0d0d0f" stroke-width="1.5"/>
+                      <path d="M12 8v4l3 3" stroke="#0d0d0f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <div class="am-row__text"><span class="am-row__name">Джакузи</span></div>
+                </div>
+                <label class="am-toggle">
+                  <input type="checkbox" onchange="updateCount(this)">
+                  <span class="am-toggle__track"></span>
+                  <span class="am-toggle__knob"></span>
+                </label>
+              </div>
+
+              <div class="am-row">
+                <div class="am-row__info">
+                  <div class="am-row__icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 3v3M12 18v3M3 12h3M18 12h3" stroke="#0d0d0f" stroke-width="1.5" stroke-linecap="round"/>
+                      <circle cx="12" cy="12" r="4" stroke="#0d0d0f" stroke-width="1.5"/>
+                    </svg>
+                  </div>
+                  <div class="am-row__text"><span class="am-row__name">Солярий</span></div>
+                </div>
+                <label class="am-toggle">
+                  <input type="checkbox" onchange="updateCount(this)">
+                  <span class="am-toggle__track"></span>
+                  <span class="am-toggle__knob"></span>
+                </label>
+              </div>
+
+              <div class="am-row">
+                <div class="am-row__info">
+                  <div class="am-row__icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3 21h18M3 21V9l9-6 9 6v12" stroke="#0d0d0f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M9 21v-6h6v6" stroke="#0d0d0f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <div class="am-row__text"><span class="am-row__name">Хаммам</span></div>
+                </div>
+                <label class="am-toggle">
+                  <input type="checkbox" checked onchange="updateCount(this)">
+                  <span class="am-toggle__track"></span>
+                  <span class="am-toggle__knob"></span>
+                </label>
+              </div>
+
+              <div class="am-row">
+                <div class="am-row__info">
+                  <div class="am-row__icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M4 8h16M4 8C4 5.8 5.8 4 8 4h8c2.2 0 4 1.8 4 4M4 8v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8" stroke="#0d0d0f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <div class="am-row__text"><span class="am-row__name">Фитнес-центр</span></div>
+                </div>
+                <label class="am-toggle">
+                  <input type="checkbox" checked onchange="updateCount(this)">
+                  <span class="am-toggle__track"></span>
+                  <span class="am-toggle__knob"></span>
+                </label>
+              </div>
+
+              <div class="am-row">
+                <div class="am-row__info">
+                  <div class="am-row__icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" stroke="#0d0d0f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <div class="am-row__text"><span class="am-row__name">Косметические процедуры</span></div>
+                </div>
+                <label class="am-toggle">
+                  <input type="checkbox" onchange="updateCount(this)">
+                  <span class="am-toggle__track"></span>
+                  <span class="am-toggle__knob"></span>
+                </label>
+              </div>
+            </div>
+
+          </div><!-- /.am-left -->
+
+          <!-- ── Right sticky nav ─────────────────────────────── -->
+          <nav class="am-nav" aria-label="Разделы удобств">
+            <div class="am-nav__card">
+              <a href="#cat-main" class="am-nav__item am-nav__item--active">Основное</a>
+              <a href="#cat-food" class="am-nav__item">Питание</a>
+              <a href="#cat-spa" class="am-nav__item">На территории</a>
+              <a href="#" class="am-nav__item">Развлечения</a>
+              <a href="#" class="am-nav__item">Безопасность</a>
+              <a href="#" class="am-nav__item">Релакс</a>
+            </div>
+          </nav>
+
+        </div><!-- /.am-layout -->
+      </main>
+    </div>
+  </div>
+
+  <!-- ═══════════════ Amenity Drawer ════════════════════════════ -->
+
+  <div class="amd-overlay" id="amd-overlay"></div>
+
+  <div class="amd-close-wrap" id="amd-close-wrap">
+    <button class="amd-close-btn" id="amd-close-btn" aria-label="Закрыть">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 6L6 18M6 6l12 12" stroke="#0d0d0f" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <div class="amd-drawer" id="amd-drawer" role="dialog" aria-modal="true" aria-label="Редактирование удобства">
+    <div class="amd-inner">
+
+      <!-- Header -->
+      <div class="amd-header">
+        <h2 class="amd-title">Парковка</h2>
+        <label class="amd-toggle">
+          <input type="checkbox" checked id="amd-main-toggle">
+          <span class="amd-toggle__track"></span>
+          <span class="amd-toggle__knob"></span>
+        </label>
+      </div>
+
+      <!-- Фотографии -->
+      <div>
+        <p class="amd-section-title">Фотографии</p>
+
+        <!-- Segmented control -->
+        <div class="amd-segmented">
+          <button class="amd-segmented__tab amd-segmented__tab--active" onclick="amdSwitchTab(this, 'upload')">Загрузить новые</button>
+          <button class="amd-segmented__tab" onclick="amdSwitchTab(this, 'existing')">Выбрать из добавленных</button>
+        </div>
+
+        <!-- Dropzone -->
+        <div class="amd-dropzone" id="amd-dropzone" onclick="document.getElementById('amd-file-input').click()">
+          <svg class="amd-dropzone__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 16V8M12 8l-3 3M12 8l3 3" stroke="#0d0d0f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M20 17a4 4 0 000-8 5.5 5.5 0 00-10.9-1A4 4 0 004 17" stroke="#0d0d0f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div>
+            <p class="amd-dropzone__title">Перетащите фото сюда или загрузите его</p>
+          </div>
+          <p class="amd-dropzone__hint">До 10 МБ в формате JPEG, PNG или HEIC. Максимум 20 фото.<br>Новые фотографии добавятся также в галерею объекта</p>
+          <button class="amd-dropzone__btn" onclick="event.stopPropagation(); document.getElementById('amd-file-input').click()">Выбрать файл</button>
+          <input type="file" id="amd-file-input" accept="image/*" multiple style="display:none">
+        </div>
+      </div>
+
+      <!-- Стоимость -->
+      <div>
+        <p class="amd-section-title">Стоимость</p>
+        <div class="amd-radio-group">
+          <label class="amd-radio-item">
+            <input type="radio" name="amd-price" value="free" checked>
+            <span class="amd-radio-item__label">Бесплатно</span>
+          </label>
+          <label class="amd-radio-item">
+            <input type="radio" name="amd-price" value="paid">
+            <span class="amd-radio-item__label">Платно для гостей</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Promo banner -->
+      <div class="amd-banner">
+        <div class="amd-banner__content">
+          <p class="amd-banner__title">Может создадим услугу?</p>
+          <p class="amd-banner__text">Услугам можно задать стоимость и метод расчёта цены, а гостям легче их найти при бронировании</p>
+          <a href="/Extranet/create-service.html?preset=parking" class="amd-banner__btn">К созданию услуги</a>
+        </div>
+        <div class="amd-banner__imgs">
+          <img class="amd-banner__img1"
+               src="http://localhost:3845/assets/30401f16b11c05d7140d58dcf020ee1b56b92a11.png"
+               alt="">
+          <img class="amd-banner__img2"
+               src="http://localhost:3845/assets/2cd5dccffcb99d55cf7ff3bb24fb23a56d6e3b33.png"
+               alt="">
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- ═══════════════ /Amenity Drawer ════════════════════════════ -->
+
+  <script>
+    // ─── Submenu toggle ─────────────────────────────────────────
+    function toggleSubmenu() {
+      const submenu = document.getElementById('submenu-object');
+      const snippet = document.getElementById('snippet-object');
+      const isOpen  = submenu.classList.toggle('ex-submenu--open');
+      snippet.classList.toggle('ex-snippet--open', isOpen);
+    }
+
+    // ─── Filter chips ───────────────────────────────────────────
+    function setFilter(el, filter) {
+      document.querySelectorAll('.am-chip').forEach(c => c.classList.remove('am-chip--active'));
+      el.classList.add('am-chip--active');
+    }
+
+    // ─── Right nav highlight on scroll ──────────────────────────
+    (function() {
+      const sections = [
+        { id: 'cat-main', link: document.querySelector('a[href="#cat-main"]') },
+        { id: 'cat-food', link: document.querySelector('a[href="#cat-food"]') },
+        { id: 'cat-spa',  link: document.querySelector('a[href="#cat-spa"]')  },
+      ];
+
+      function onScroll() {
+        const scrollY = window.scrollY + 120;
+        let current = sections[0];
+        sections.forEach(s => {
+          const el = document.getElementById(s.id);
+          if (el && el.offsetTop <= scrollY) current = s;
+        });
+        sections.forEach(s => s.link && s.link.classList.remove('am-nav__item--active'));
+        if (current.link) current.link.classList.add('am-nav__item--active');
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+    })();
+
+    // ─── Search filter ──────────────────────────────────────────
+    document.querySelector('.am-search__input').addEventListener('input', function() {
+      const q = this.value.toLowerCase().trim();
+      document.querySelectorAll('.am-row').forEach(row => {
+        const name = row.querySelector('.am-row__name');
+        if (!name) return;
+        row.style.display = !q || name.textContent.toLowerCase().includes(q) ? '' : 'none';
+      });
+    });
+
+    // ─── Amenity Drawer ─────────────────────────────────────────
+    var amdOverlay   = document.getElementById('amd-overlay');
+    var amdDrawer    = document.getElementById('amd-drawer');
+    var amdCloseWrap = document.getElementById('amd-close-wrap');
+    var amdCloseBtn  = document.getElementById('amd-close-btn');
+
+    function amdOpen() {
+      amdOverlay.classList.add('amd-overlay--visible');
+      amdDrawer.classList.add('amd-drawer--open');
+      amdCloseWrap.classList.add('amd-close-wrap--visible');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function amdClose() {
+      amdOverlay.classList.remove('amd-overlay--visible');
+      amdDrawer.classList.remove('amd-drawer--open');
+      amdCloseWrap.classList.remove('amd-close-wrap--visible');
+      document.body.style.overflow = '';
+    }
+
+    // Кнопка редактировать на строке «Парковка» — первая .am-row__edit
+    document.querySelector('.am-row__edit').addEventListener('click', amdOpen);
+
+    amdCloseBtn.addEventListener('click', amdClose);
+    amdOverlay.addEventListener('click', amdClose);
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') amdClose();
+    });
+
+    // Синхронизация тоггла в шторке с тогглом в строке таблицы
+    var amdMainToggle = document.getElementById('amd-main-toggle');
+    var parkingRowToggle = document.querySelector('.am-row .am-toggle input');
+    amdMainToggle.addEventListener('change', function() {
+      if (parkingRowToggle) parkingRowToggle.checked = this.checked;
+    });
+
+    // ─── Segmented control ──────────────────────────────────────
+    function amdSwitchTab(el, tab) {
+      document.querySelectorAll('.amd-segmented__tab').forEach(t => t.classList.remove('amd-segmented__tab--active'));
+      el.classList.add('amd-segmented__tab--active');
+    }
+  </script>
+</body>
+</html>
